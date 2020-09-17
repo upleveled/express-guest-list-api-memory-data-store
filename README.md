@@ -2,9 +2,16 @@
 
 A simple, naïve, in-memory RESTful guest list API in Express.
 
-## Usage
+## Installation
 
-Use it as follows:
+```sh
+git clone https://github.com/upleveled/express-guest-list-api-memory-data-store.git
+cd express-guest-list-api-memory-data-store
+yarn
+yarn start
+```
+
+## Usage
 
 ### Base URL
 

@@ -10,7 +10,6 @@
     "node": ">=14.8.0"
   },
   "scripts": {
-    "temp-install-ts-node-yarn": "cd node_modules/ts-node && yarn",
     "dev": "ts-node-dev -r esm --respawn --script-mode --transpile-only index.ts",
     "start": "node --loader ts-node/esm/transpile-only.mjs index.ts"
   },
