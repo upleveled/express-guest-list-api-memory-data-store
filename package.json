@@ -1,0 +1,29 @@
+{
+  "name": "express-todo-list-api-memory-data-store",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": "git@github.com:upleveled/express-todo-list-api-memory-data-store.git",
+  "author": "Karl Horky <karl.horky@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=14.8.0"
+  },
+  "scripts": {
+    "temp-install-ts-node-yarn": "cd node_modules/ts-node && yarn",
+    "dev": "ts-node-dev -r esm --respawn --script-mode --transpile-only index.ts",
+    "start": "node --loader ts-node/esm/transpile-only.mjs index.ts"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.8",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "ts-node": "9.0.0",
+    "typescript": "3.9.7"
+  },
+  "devDependencies": {
+    "@types/node": "14.0.27",
+    "esm": "3.2.25",
+    "ts-node-dev": "1.0.0-pre.57"
+  }
+}
