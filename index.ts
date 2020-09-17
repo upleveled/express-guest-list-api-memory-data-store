@@ -5,15 +5,16 @@ const app = express();
 
 app.use(bodyParser.json());
 
-type Todo = {
+type Guest = {
   id: string;
-  title: string;
-  completed: boolean;
+  firstName: string;
+  lastName: string;
+  attending: boolean;
 };
 
 let id = 1;
 
-const todos: Todo[] = [];
+const guestList: Guest[] = [];
 
 // Enable CORS
 app.use(function (_req, res, next) {
@@ -26,55 +27,66 @@ app.use(function (_req, res, next) {
   next();
 });
 
-// Get all todos
+// Get all guests
 app.get('/', function (_req, res) {
-  res.json(todos);
+  res.json(guestList);
 });
 
-// New todo
+// New guest
 app.post('/', function (req, res) {
-  if (!req.body.title) {
-    res
-      .status(400)
-      .json({ errors: [{ message: 'Request body missing a title property' }] });
+  if (!req.body.firstName || !req.body.lastName) {
+    res.status(400).json({
+      errors: [
+        { message: 'Request body missing a firstName or lastName property' },
+      ],
+    });
     return;
   }
 
-  const todo = { id: String(id++), title: req.body.title, completed: false };
-  todos.push(todo);
+  const guest = {
+    id: String(id++),
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    attending: false,
+  };
 
-  res.json(todo);
+  guestList.push(guest);
+
+  res.json(guest);
 });
 
-// Modify a single todo
+// Modify a single guest
 app.patch('/:id', function (req, res) {
-  const todo = todos.find((todo) => todo.id === req.params.id);
-  if (!todo) {
+  const guest = guestList.find((guest) => guest.id === req.params.id);
+
+  if (!guest) {
     res
       .status(404)
-      .json({ errors: [{ message: `Todo ${req.params.id} not found` }] });
+      .json({ errors: [{ message: `Guest ${req.params.id} not found` }] });
     return;
   }
 
-  if (req.body.title) todo.title = req.body.title;
-  if (req.body.completed) todo.completed = req.body.completed;
-  res.json(todo);
+  if (req.body.firstName) guest.firstName = req.body.firstName;
+  if (req.body.lastName) guest.lastName = req.body.lastName;
+  if (req.body.attending) guest.attending = req.body.attending;
+  res.json(guest);
 });
 
-// Delete a single todo
+// Delete a single guest
 app.delete('/:id', function (req, res) {
-  const todo = todos.find((todo) => todo.id === req.params.id);
-  if (!todo) {
+  const guest = guestList.find((guest) => guest.id === req.params.id);
+
+  if (!guest) {
     res
       .status(404)
-      .json({ errors: [{ message: `Todo ${req.params.id} not found` }] });
+      .json({ errors: [{ message: `Guest ${req.params.id} not found` }] });
     return;
   }
 
-  todos.splice(todos.indexOf(todo), 1);
-  res.json(todo);
+  guestList.splice(guestList.indexOf(guest), 1);
+  res.json(guest);
 });
 
 app.listen(5000, () => {
-  console.log('🚀 Todo list server started on http://localhost:5000');
+  console.log('🚀 Guest list server started on http://localhost:5000');
 });

@@ -1,6 +1,6 @@
-# express-todo-list-api-memory-data-store
+# Express REST Guest List API (in-memory)
 
-A simple, naïve RESTful to-do list API in Express.js.
+A simple, naïve, in-memory RESTful guest list API in Express.
 
 ## Usage
 
@@ -12,14 +12,14 @@ Use it as follows:
 const baseUrl = 'http://localhost:5000';
 ```
 
-### Getting all todo items (aka `GET /`)
+### Getting all guests (aka `GET /`)
 
 ```js
 const response = await fetch(`${baseUrl}/`);
-const allTodos = await response.json();
+const allGuests = await response.json();
 ```
 
-### Creating a todo item (aka `POST /`)
+### Creating a new guest (aka `POST /`)
 
 ```js
 const response = await fetch(`${baseUrl}/`, {
@@ -27,12 +27,12 @@ const response = await fetch(`${baseUrl}/`, {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify({ title: 'Walk the dog' }),
+  body: JSON.stringify({ firstName: 'Karl', lastName: 'Horky' }),
 });
-const createdTodo = await response.json();
+const createdGuest = await response.json();
 ```
 
-### Updating a todo item (aka `PATCH /:id`)
+### Updating a guest (aka `PATCH /:id`)
 
 ```js
 const response = await fetch(`${baseUrl}/1`, {
@@ -40,14 +40,14 @@ const response = await fetch(`${baseUrl}/1`, {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify({ completed: true }),
+  body: JSON.stringify({ attending: true }),
 });
-const updatedTodo = await response.json();
+const updatedGuest = await response.json();
 ```
 
-### Deleting a todo item (aka `DELETE /:id`)
+### Deleting a guest (aka `DELETE /:id`)
 
 ```js
 const response = await fetch(`${baseUrl}/1`, { method: 'DELETE' });
-const deletedTodo = await response.json();
+const deletedGuest = await response.json();
 ```

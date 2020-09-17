@@ -1,8 +1,8 @@
 {
-  "name": "express-todo-list-api-memory-data-store",
+  "name": "express-event-rsvp-list-api-memory-data-store",
   "version": "1.0.0",
   "main": "index.ts",
-  "repository": "git@github.com:upleveled/express-todo-list-api-memory-data-store.git",
+  "repository": "git@github.com:upleveled/express-event-rsvp-list-api-memory-data-store.git",
   "author": "Karl Horky <karl.horky@gmail.com>",
   "license": "MIT",
   "type": "module",
