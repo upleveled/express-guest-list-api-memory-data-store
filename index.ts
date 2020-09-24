@@ -43,6 +43,18 @@ app.post('/', function (req, res) {
     return;
   }
 
+  if (Object.keys(req.body).length > 2) {
+    res.status(400).json({
+      errors: [
+        {
+          message:
+            'Request body contains more than firstName and lastName properties',
+        },
+      ],
+    });
+    return;
+  }
+
   const guest = {
     id: String(id++),
     firstName: req.body.firstName,
@@ -57,7 +69,29 @@ app.post('/', function (req, res) {
 
 // Modify a single guest
 app.patch('/:id', function (req, res) {
-  const guest = guestList.find((guest) => guest.id === req.params.id);
+  const allowedKeys = ['firstName', 'lastName', 'attending'];
+  const difference = Object.keys(req.body).filter(
+    (key) => !allowedKeys.includes(key),
+  );
+
+  if (difference.length > 0) {
+    res.status(400).json({
+      errors: [
+        {
+          message: `Request body contains more than allowed properties (${allowedKeys.join(
+            ', ',
+          )}). The request also contains these extra keys that are not allowed: ${difference.join(
+            ', ',
+          )}`,
+        },
+      ],
+    });
+    return;
+  }
+
+  const guest = guestList.find(
+    (currentGuest) => currentGuest.id === req.params.id,
+  );
 
   if (!guest) {
     res
@@ -74,7 +108,9 @@ app.patch('/:id', function (req, res) {
 
 // Delete a single guest
 app.delete('/:id', function (req, res) {
-  const guest = guestList.find((guest) => guest.id === req.params.id);
+  const guest = guestList.find(
+    (currentGuest) => currentGuest.id === req.params.id,
+  );
 
   if (!guest) {
     res
