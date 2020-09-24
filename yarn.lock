@@ -291,7 +291,7 @@
     "@typescript-eslint/types" "4.2.0"
     eslint-visitor-keys "^2.0.0"
 
-"@upleveled/eslint-config-upleveled@^1.0.2":
+"@upleveled/eslint-config-upleveled@1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@upleveled/eslint-config-upleveled/-/eslint-config-upleveled-1.0.2.tgz#9d7837928ac9e82c877f562f55e2c9827c7dbe1e"
   integrity sha512-EXhChEEYtUg8j6ICcM4q8E6cT8lggvtBW1ZXRc0mEdgZkEkMn7o8MJZrtzy/bAztyMs6bRWV+I8C5WQ3Gs6yAg==
