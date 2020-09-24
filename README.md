@@ -63,6 +63,6 @@ const deletedGuest = await response.json();
 
 Create a Heroku account at [Heroku - Sign up](https://signup.heroku.com/), and then click on this button:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/upleveled/express-guest-list-api-memory-data-store)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/upleveled/express-guest-list-api-memory-data-store)
 
 This will set up a new application on your Heroku account using this repo as a template.
