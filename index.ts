@@ -9,6 +9,7 @@ type Guest = {
   id: string;
   firstName: string;
   lastName: string;
+  deadline: string;
   attending: boolean;
 };
 
@@ -43,12 +44,12 @@ app.post('/', function (req, res) {
     return;
   }
 
-  if (Object.keys(req.body).length > 2) {
+  if (Object.keys(req.body).length > 3) {
     res.status(400).json({
       errors: [
         {
           message:
-            'Request body contains more than firstName and lastName properties',
+            'Request body contains more than firstName, lastName and deadline properties',
         },
       ],
     });
@@ -59,6 +60,7 @@ app.post('/', function (req, res) {
     id: String(id++),
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    deadline: req.body.deadline,
     attending: false,
   };
 
@@ -69,7 +71,7 @@ app.post('/', function (req, res) {
 
 // Modify a single guest
 app.patch('/:id', function (req, res) {
-  const allowedKeys = ['firstName', 'lastName', 'attending'];
+  const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
   const difference = Object.keys(req.body).filter(
     (key) => !allowedKeys.includes(key),
   );
@@ -102,6 +104,7 @@ app.patch('/:id', function (req, res) {
 
   if (req.body.firstName) guest.firstName = req.body.firstName;
   if (req.body.lastName) guest.lastName = req.body.lastName;
+  if (req.body.deadline) guest.deadline = req.body.deadline;
   if ('attending' in req.body) guest.attending = req.body.attending;
   res.json(guest);
 });
