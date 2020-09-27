@@ -102,7 +102,7 @@ app.patch('/:id', function (req, res) {
 
   if (req.body.firstName) guest.firstName = req.body.firstName;
   if (req.body.lastName) guest.lastName = req.body.lastName;
-  if (req.body.attending) guest.attending = req.body.attending;
+  if ('attending' in req.body) guest.attending = req.body.attending;
   res.json(guest);
 });
 
