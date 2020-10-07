@@ -60,7 +60,7 @@ app.post('/', function (req, res) {
     id: String(id++),
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    deadline: req.body.deadline,
+    ...(req.body.deadline ? { deadline: req.body.deadline } : {}),
     attending: false,
   };
 
