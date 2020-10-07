@@ -9,7 +9,7 @@ type Guest = {
   id: string;
   firstName: string;
   lastName: string;
-  deadline: string;
+  deadline?: string;
   attending: boolean;
 };
 
