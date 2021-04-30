@@ -1,5 +1,5 @@
-import express from 'express';
 import bodyParser from 'body-parser';
+import express from 'express';
 
 const app = express();
 
@@ -18,18 +18,21 @@ let id = 1;
 const guestList: Guest[] = [];
 
 // Enable CORS
-app.use(function (_req, res, next) {
+app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept',
   );
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+  res.header(
+    'Access-Control-Allow-Methods',
+    'GET, POST, PATCH, DELETE, OPTIONS',
+  );
   next();
 });
 
 // Get all guests
-app.get('/', function (_req, res) {
+app.get('/', function (req, res) {
   res.json(guestList);
 });
 
