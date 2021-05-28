@@ -1,9 +1,9 @@
-name: Lint and Test
+name: Lint and Check Types
 on: push
 
 jobs:
   build:
-    name: Lint and Test
+    name: Lint and Check Types
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
