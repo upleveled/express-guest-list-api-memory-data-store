@@ -21,7 +21,7 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "@types/node": "16.10.9",
+    "@types/node": "16.11.0",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
     "@upleveled/eslint-config-upleveled": "1.18.0",
