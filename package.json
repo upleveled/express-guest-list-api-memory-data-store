@@ -41,5 +41,10 @@
     "eslint-plugin-unicorn": "39.0.0",
     "esm": "3.2.25",
     "ts-node-dev": "1.1.8"
+  },
+  "resolutions": {
+    "@typescript-eslint/eslint-plugin": "5.8.0",
+    "@typescript-eslint/parser": "5.8.0",
+    "eslint-plugin-react": "7.28.0"
   }
 }
