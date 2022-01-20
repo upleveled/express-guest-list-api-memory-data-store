@@ -26,6 +26,13 @@ const response = await fetch(`${baseUrl}/guests`);
 const allGuests = await response.json();
 ```
 
+### Getting a single guest (aka `GET /guests/:id`)
+
+```js
+const response = await fetch(`${baseUrl}/guests/:id`);
+const guest = await response.json();
+```
+
 ### Creating a new guest (aka `POST /guests`)
 
 ```js
