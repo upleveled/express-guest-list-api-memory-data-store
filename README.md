@@ -16,7 +16,7 @@ yarn start
 ### Base URL
 
 ```js
-const baseUrl = 'http://localhost:5000';
+const baseUrl = 'http://localhost:5050';
 ```
 
 ### Getting all guests (aka `GET /`)

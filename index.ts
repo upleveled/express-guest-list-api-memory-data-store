@@ -128,6 +128,6 @@ app.delete('/:id', function (req, res) {
   res.json(guest);
 });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log('🚀 Guest list server started on http://localhost:5000');
+app.listen(process.env.PORT || 5050, () => {
+  console.log('🚀 Guest list server started on http://localhost:5050');
 });
