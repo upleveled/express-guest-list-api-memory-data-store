@@ -30,7 +30,7 @@ const allGuests = await response.json();
 
 ```js
 const response = await fetch(`${baseUrl}/guests/:id`);
-const singleGuest = await response.json();
+const guest = await response.json();
 ```
 
 ### Creating a new guest (aka `POST /guests`)
