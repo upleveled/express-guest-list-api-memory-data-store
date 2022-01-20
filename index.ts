@@ -32,9 +32,10 @@ app.use(function (req, res, next) {
 
 // Get endpoints
 app.get('/', function (req, res) {
-  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
   res.json({
-    guests: `${fullUrl}guests/`,
+    guests: `${
+      req.protocol + '://' + req.get('host') + req.originalUrl
+    }guests/`,
   });
 });
 
