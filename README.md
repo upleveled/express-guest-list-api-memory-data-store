@@ -19,8 +19,6 @@ yarn start
 const baseUrl = 'http://localhost:4000';
 ```
 
-### Getting endpoint list (aka `GET /`)
-
 ### Getting all guests (aka `GET /guests`)
 
 ```js
