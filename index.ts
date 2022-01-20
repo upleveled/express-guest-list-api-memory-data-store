@@ -23,10 +23,7 @@ app.use(function (req, res, next) {
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept',
   );
-  res.header(
-    'Access-Control-Allow-Methods',
-    'GET, POST, PATCH, DELETE, OPTIONS',
-  );
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
 });
 
@@ -79,7 +76,7 @@ app.post('/guests', function (req, res) {
 });
 
 // Modify a single guest
-app.patch('/guests/:id', function (req, res) {
+app.put('/guests/:id', function (req, res) {
   const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
   const difference = Object.keys(req.body).filter(
     (key) => !allowedKeys.includes(key),
