@@ -75,6 +75,21 @@ app.post('/guests', function (req, res) {
   res.json(guest);
 });
 
+// Get a single guest
+app.get('/guests/:id', function (req, res) {
+  const guest = guestList.find(
+    (currentGuest) => currentGuest.id === req.params.id,
+  );
+
+  if (!guest) {
+    res
+      .status(404)
+      .json({ errors: [{ message: `Guest ${req.params.id} not found` }] });
+    return;
+  }
+  res.json(guest);
+});
+
 // Modify a single guest
 app.put('/guests/:id', function (req, res) {
   const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
