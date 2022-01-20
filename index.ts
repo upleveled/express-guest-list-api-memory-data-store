@@ -30,6 +30,14 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Get endpoints and accepted methods
+app.get('/', function (req, res) {
+  res.json({
+    '/guests': ['GET', 'POST'],
+    '/guests/:id': ['PATCH', 'DELETE'],
+  });
+});
+
 // Get all guests
 app.get('/guests', function (req, res) {
   res.json(guestList);
