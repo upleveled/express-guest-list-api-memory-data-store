@@ -19,17 +19,19 @@ yarn start
 const baseUrl = 'http://localhost:4000';
 ```
 
-### Getting all guests (aka `GET /`)
+### Getting endpoint list (aka `GET /`)
+
+### Getting all guests (aka `GET /guests`)
 
 ```js
-const response = await fetch(`${baseUrl}/`);
+const response = await fetch(`${baseUrl}/guests`);
 const allGuests = await response.json();
 ```
 
-### Creating a new guest (aka `POST /`)
+### Creating a new guest (aka `POST /guests`)
 
 ```js
-const response = await fetch(`${baseUrl}/`, {
+const response = await fetch(`${baseUrl}/guests`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -39,10 +41,10 @@ const response = await fetch(`${baseUrl}/`, {
 const createdGuest = await response.json();
 ```
 
-### Updating a guest (aka `PATCH /:id`)
+### Updating a guest (aka `PATCH /guests/:id`)
 
 ```js
-const response = await fetch(`${baseUrl}/1`, {
+const response = await fetch(`${baseUrl}/guests/1`, {
   method: 'PATCH',
   headers: {
     'Content-Type': 'application/json',
@@ -52,10 +54,10 @@ const response = await fetch(`${baseUrl}/1`, {
 const updatedGuest = await response.json();
 ```
 
-### Deleting a guest (aka `DELETE /:id`)
+### Deleting a guest (aka `DELETE /guests/:id`)
 
 ```js
-const response = await fetch(`${baseUrl}/1`, { method: 'DELETE' });
+const response = await fetch(`${baseUrl}/guests/1`, { method: 'DELETE' });
 const deletedGuest = await response.json();
 ```
 
