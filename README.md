@@ -39,11 +39,11 @@ const response = await fetch(`${baseUrl}/guests`, {
 const createdGuest = await response.json();
 ```
 
-### Updating a guest (aka `PATCH /guests/:id`)
+### Updating a guest (aka `PUT /guests/:id`)
 
 ```js
 const response = await fetch(`${baseUrl}/guests/1`, {
-  method: 'PATCH',
+  method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
   },
