@@ -33,9 +33,7 @@ app.use(function (req, res, next) {
 // Get endpoints
 app.get('/', function (req, res) {
   res.json({
-    guests: `${
-      req.protocol + '://' + req.get('host') + req.originalUrl
-    }guests/`,
+    guests: `${req.protocol}://${req.get('host') + req.originalUrl}guests/`,
   });
 });
 
