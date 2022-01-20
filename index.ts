@@ -31,12 +31,12 @@ app.use(function (req, res, next) {
 });
 
 // Get all guests
-app.get('/', function (req, res) {
+app.get('/guests', function (req, res) {
   res.json(guestList);
 });
 
 // New guest
-app.post('/', function (req, res) {
+app.post('/guests', function (req, res) {
   if (!req.body.firstName || !req.body.lastName) {
     res.status(400).json({
       errors: [
@@ -72,7 +72,7 @@ app.post('/', function (req, res) {
 });
 
 // Modify a single guest
-app.patch('/:id', function (req, res) {
+app.patch('/guests/:id', function (req, res) {
   const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
   const difference = Object.keys(req.body).filter(
     (key) => !allowedKeys.includes(key),
@@ -112,7 +112,7 @@ app.patch('/:id', function (req, res) {
 });
 
 // Delete a single guest
-app.delete('/:id', function (req, res) {
+app.delete('/guests/:id', function (req, res) {
   const guest = guestList.find(
     (currentGuest) => currentGuest.id === req.params.id,
   );
