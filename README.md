@@ -66,6 +66,12 @@ const response = await fetch(`${baseUrl}/guests/1`, { method: 'DELETE' });
 const deletedGuest = await response.json();
 ```
 
+### Deleting all guests (aka `DELETE /guests`)
+
+```js
+const response = await fetch(`${baseUrl}/guests`, { method: 'DELETE' });
+```
+
 ## Deploying to Heroku
 
 Create a Heroku account at [Heroku - Sign up](https://signup.heroku.com/), and then click on this button:
