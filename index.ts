@@ -147,6 +147,12 @@ app.delete('/guests/:id', function (req, res) {
   res.json(guest);
 });
 
+// Clear entire list of guests
+app.delete('/guests', function (req, res) {
+  guestList.splice(0, guestList.length);
+  res.status(200);
+});
+
 app.listen(process.env.PORT || 4000, () => {
   console.log('🚀 Guest list server started on http://localhost:4000');
 });
