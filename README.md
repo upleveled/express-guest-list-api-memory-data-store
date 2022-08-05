@@ -1,4 +1,4 @@
-# Express REST Guest List API (in-memory)
+# Express REST Guest List API
 
 A simple, naïve, in-memory RESTful guest list API in Express.
 
