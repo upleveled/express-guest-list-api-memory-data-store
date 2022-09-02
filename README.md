@@ -78,7 +78,7 @@ This will set up a new application on your Heroku account using this repo as a t
 
 -->
 
-### Run on Replit
+### Import to Replit
 
 Create a Replit account at [Replit - Sign up](https://replit.com/signup), and then click on this button:
 
