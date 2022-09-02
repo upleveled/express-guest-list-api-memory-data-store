@@ -84,4 +84,4 @@ Create a Replit account at [Replit - Sign up](https://replit.com/signup), and th
 
 [![Run on Replit](https://repl.it/badge/github/upleveled/express-guest-list-api-memory-data-store)](https://replit.com/github/upleveled/express-guest-list-api-memory-data-store)
 
-This will set up a new application on your Replit account using this repo as a template.
+This will import the code from this repo to a new repl on Replit. Once it has been imported, run the application using the green **Run** button at the top center of the screen.
