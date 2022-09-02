@@ -66,13 +66,17 @@ const response = await fetch(`${baseUrl}/guests/1`, { method: 'DELETE' });
 const deletedGuest = await response.json();
 ```
 
-<!-- ## Deploying to Heroku
+<!--
+
+## Deploying to Heroku
 
 Create a Heroku account at [Heroku - Sign up](https://signup.heroku.com/), and then click on this button:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/upleveled/express-guest-list-api-memory-data-store/tree/main)
 
-This will set up a new application on your Heroku account using this repo as a template. -->
+This will set up a new application on your Heroku account using this repo as a template.
+
+-->
 
 ### Run on Replit
 
