@@ -78,6 +78,6 @@ This will set up a new application on your Heroku account using this repo as a t
 
 Create a Replit account at [Replit - Sign up](https://replit.com/signup), and then click on this button:
 
-[![Run on Repl.it](https://repl.it/badge/github/unknownblueguy6/MineSweeper)](https://replit.com/github/upleveled/express-guest-list-api-memory-data-store)>)
+[![Run on Repl.it](https://repl.it/badge/github/unknownblueguy6/MineSweeper)](https://replit.com/github/upleveled/express-guest-list-api-memory-data-store)
 
 This will set up a new application on your Replit account using this repo as a template.
