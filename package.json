@@ -14,7 +14,7 @@
     "start": "node --loader ts-node/esm/transpile-only.mjs index.ts"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "13.0.0",
+    "@next/eslint-plugin-next": "13.0.1",
     "@types/express": "4.17.14",
     "express": "4.18.2",
     "ts-node": "10.9.1",
@@ -22,12 +22,12 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
-    "@types/node": "18.11.7",
+    "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
-    "@typescript-eslint/eslint-plugin": "5.41.0",
-    "@typescript-eslint/parser": "5.41.0",
-    "@upleveled/eslint-config-upleveled": "3.3.3",
+    "@typescript-eslint/eslint-plugin": "5.42.0",
+    "@typescript-eslint/parser": "5.42.0",
+    "@upleveled/eslint-config-upleveled": "3.3.8",
     "@upleveled/eslint-plugin-upleveled": "2.1.6",
     "eslint": "8.26.0",
     "eslint-config-react-app": "7.0.1",
@@ -46,8 +46,8 @@
     "eslint-plugin-unicorn": "44.0.2"
   },
   "resolutions": {
-    "@typescript-eslint/eslint-plugin": "5.41.0",
-    "@typescript-eslint/parser": "5.41.0",
+    "@typescript-eslint/eslint-plugin": "5.42.0",
+    "@typescript-eslint/parser": "5.42.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.31.10",
