@@ -1,1 +1,1 @@
-run = "pnpm start"
+run = "npm start"
