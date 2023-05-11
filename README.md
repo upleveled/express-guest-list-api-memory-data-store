@@ -7,8 +7,8 @@ A simple, naïve, in-memory RESTful guest list API in Express.
 ```sh
 git clone https://github.com/upleveled/express-guest-list-api-memory-data-store.git
 cd express-guest-list-api-memory-data-store
-yarn
-yarn start
+pnpm install
+pnpm start
 ```
 
 ## Usage

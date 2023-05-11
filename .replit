@@ -1,1 +1,1 @@
-run = "yarn start"
+run = "npm start"
