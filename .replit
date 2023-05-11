@@ -1,1 +1,1 @@
-run = "yarn start"
+run = "pnpm start"
