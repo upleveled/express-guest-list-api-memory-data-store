@@ -1,6 +1,0 @@
-.eslintrc.cjs
-*.config.js
-build
-
-# Next.js build folder
-.next
