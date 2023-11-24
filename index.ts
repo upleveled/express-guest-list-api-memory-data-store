@@ -17,7 +17,7 @@ let id = 1;
 const guestList: Guest[] = [];
 
 // Enable CORS
-app.use(function (req, res, next) {
+app.use(function allowCrossDomainRequests(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
     'Access-Control-Allow-Headers',
@@ -28,19 +28,19 @@ app.use(function (req, res, next) {
 });
 
 // Get endpoints
-app.get('/', function (req, res) {
+app.get('/', function rootHandler(req, res) {
   res.json({
     guests: `${req.protocol}://${req.get('host')}/guests/`,
   });
 });
 
 // Get all guests
-app.get('/guests', function (req, res) {
+app.get('/guests', function getGuestsHandler(req, res) {
   res.json(guestList);
 });
 
 // New guest
-app.post('/guests', function (req, res) {
+app.post('/guests', function postGuestsHandler(req, res) {
   if (!req.body.firstName || !req.body.lastName) {
     res.status(400).json({
       errors: [
@@ -76,7 +76,7 @@ app.post('/guests', function (req, res) {
 });
 
 // Get a single guest
-app.get('/guests/:id', function (req, res) {
+app.get('/guests/:id', function getGuestHandler(req, res) {
   const guest = guestList.find(
     (currentGuest) => currentGuest.id === req.params.id,
   );
@@ -91,7 +91,7 @@ app.get('/guests/:id', function (req, res) {
 });
 
 // Modify a single guest
-app.put('/guests/:id', function (req, res) {
+app.put('/guests/:id', function putGuestHandler(req, res) {
   const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
   const difference = Object.keys(req.body).filter(
     (key) => !allowedKeys.includes(key),
@@ -131,7 +131,7 @@ app.put('/guests/:id', function (req, res) {
 });
 
 // Delete a single guest
-app.delete('/guests/:id', function (req, res) {
+app.delete('/guests/:id', function deleteGuestHandler(req, res) {
   const guest = guestList.find(
     (currentGuest) => currentGuest.id === req.params.id,
   );
