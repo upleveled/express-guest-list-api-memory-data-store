@@ -80,11 +80,11 @@ This will set up a new application on your Heroku account using this repo as a t
 
 ### Import to CodeSandbox
 
-Sign in to your CodeSandbox account at [CodeSandbox - Sign in](https://codesandbox.io/signin?utm_source=landingpage) and then click on this button:
+Sign in to your CodeSandbox account at [CodeSandbox - Sign in](https://codesandbox.io/signin?utm_source=landingpage).
 
-[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/upleveled/express-guest-list-api-memory-data-store)
+Change the repository URL from `github` to `githubbox` in your browser's address bar and press `Enter`.
 
-This will import the code from this repo to a new Devbox on CodeSandbox. Once it has been imported, create a copy of the Devbox in your account with the "Fork" button at the top right corner. This will automatically fork and start your application.
+The repository code will be imported into a new Devbox on CodeSandbox. Once it has been imported, click the "Fork" button located in the top right corner of the interface. This will create a personal copy of the Devbox and start the application automatically.
 
 ## Related
 
