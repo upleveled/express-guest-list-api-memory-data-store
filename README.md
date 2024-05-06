@@ -78,13 +78,13 @@ This will set up a new application on your Heroku account using this repo as a t
 
 -->
 
-### Import to Replit
+### Import to CodeSandbox
 
-Create a Replit account at [Replit - Sign up](https://replit.com/signup), and then click on this button:
+Sign in to your CodeSandbox account at [CodeSandbox - Sign in](https://codesandbox.io/signin?utm_source=landingpage) and then click on this button:
 
-[![Run on Replit](https://replit.com/badge?caption=Import%20to%20Replit)](https://replit.com/github/upleveled/express-guest-list-api-memory-data-store)
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/upleveled/express-guest-list-api-memory-data-store)
 
-This will import the code from this repo to a new repl on Replit. Once it has been imported, run the application using the green **Run** button at the top center of the screen.
+This will import the code from this repo to a new Devbox on CodeSandbox. Once it has been imported, fork the Devbox to your account with the "Fork" button at the top right corner. This will automatically fork and start your application.
 
 ## Related
 

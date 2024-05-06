@@ -1,4 +1,0 @@
-run = "npm start"
-
-[nix]
-channel = "stable-23_05"
