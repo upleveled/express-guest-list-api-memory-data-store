@@ -84,7 +84,7 @@ Sign in to your CodeSandbox account at [CodeSandbox - Sign in](https://codesandb
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://githubbox.com/upleveled/express-guest-list-api-memory-data-store)
 
-This will import the code from this repo to a new Devbox on CodeSandbox. Once it has been imported, fork the Devbox to your account with the "Fork" button at the top right corner. This will automatically fork and start your application.
+This will import the code from this repo to a new Devbox on CodeSandbox. Once it has been imported, create a copy of the Devbox in your account with the "Fork" button at the top right corner. This will automatically fork and start your application.
 
 ## Related
 
