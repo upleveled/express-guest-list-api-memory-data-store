@@ -88,4 +88,4 @@ Click the "Fork" button in the top right corner of the page to create your own p
 
 ## Related
 
-- [Naive Guest List API with Expo API Routes](https://gist.github.com/karlhorky/46785c6f90924738fdb44bf2e1931f17)
+- [Naïve Guest List API with Expo API Routes](https://gist.github.com/karlhorky/46785c6f90924738fdb44bf2e1931f17)
