@@ -84,7 +84,7 @@ Login or register to [CodeSandbox - Sign in](https://codesandbox.io/signin?landi
 
 Change the URL to include "box" (`githubbox.com` instead of `github.com`) and hit return. This will take you to a page that will import the project to CodeSandbox.
 
-Click the "Fork" button in the top right corner to create a personal copy of the Devbox and start the application.
+Click the "Fork" button in the top right corner to create your own personal copy of the Devbox and start the application.
 
 ## Related
 
