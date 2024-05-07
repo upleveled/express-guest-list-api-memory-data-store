@@ -84,7 +84,7 @@ Login or register to [CodeSandbox - Sign in](https://codesandbox.io/signin?landi
 
 Change the URL to include "box" (`githubbox.com` instead of `github.com`) and hit return. This will open the project on CodeSandbox.
 
-Click the "Fork" button in the top right corner to create your own personal copy of the project.
+Click the "Fork" button in the top right corner of the page to create your own personal copy of the project.
 
 ## Related
 
