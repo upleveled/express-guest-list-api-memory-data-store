@@ -88,4 +88,4 @@ This will import the code from this repo to a new repl on Replit. Once it has be
 
 ## Related
 
-- [Naive Guest List API with Expo API Routes](https://gist.github.com/karlhorky/46785c6f90924738fdb44bf2e1931f17)
+- [Naïve Guest List API with Expo API Routes](https://gist.github.com/karlhorky/46785c6f90924738fdb44bf2e1931f17)
