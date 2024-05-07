@@ -82,7 +82,7 @@ This will set up a new application on your Heroku account using this repo as a t
 
 Login or register to [CodeSandbox - Sign in](https://codesandbox.io/signin?landingpage).
 
-Change the URL to include "box" (`githubbox.com` instead of `github.com`) and hit return. This will open the project on CodeSandbox.
+Change the `express-guest-list-api-memory-data-store` repo URL to include "box" (`githubbox.com` instead of `github.com`) and hit return. This will open the project on CodeSandbox.
 
 Click the "Fork" button in the top right corner of the page to create your own personal copy of the project.
 
