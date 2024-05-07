@@ -80,11 +80,11 @@ This will set up a new application on your Heroku account using this repo as a t
 
 ### Import to CodeSandbox
 
-Sign in to your CodeSandbox account at [CodeSandbox - Sign in](https://codesandbox.io/signin?utm_source=landingpage).
+Login or register to [CodeSandbox - Sign in](https://codesandbox.io/signin?landingpage).
 
-Change the repository URL from `github` to `githubbox` in your browser's address bar and press `Enter`.
+Change the URL to include "box" (`githubbox.com` instead of `github.com`) and hit return. This will take you to a page that will import the project to CodeSandbox.
 
-The repository code will be imported into a new Devbox on CodeSandbox. Once it has been imported, click the "Fork" button located in the top right corner of the interface. This will create a personal copy of the Devbox and start the application automatically.
+Click the "Fork" button in the top right corner to create a personal copy of the Devbox and start the application.
 
 ## Related
 
