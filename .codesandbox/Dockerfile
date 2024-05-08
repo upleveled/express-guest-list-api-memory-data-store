@@ -1,11 +1,14 @@
-# Use the node:20-alpine base image
 FROM node:20-alpine
 
-# Install zsh and Git
-RUN apk update && apk add --no-cache zsh git
+# Set the CI environment variable to true to prevent pnpm from prompting for input
+ENV CI=true
 
-# Install the latest version of pnpm
-RUN npm install -g pnpm
+# Install zsh, git and yq
+# Without zsh, the container fails to start with an error:
+# "OCI runtime exec failed: exec failed: unable to start container process: exec: '/bin/zsh': stat /bin/zsh: no such file or directory: unknown"
+# Without git, opening the terminal on CodeSandbox results in an error:
+# "/root/.oh-my-zsh/tools/check_for_upgrade.sh:31: command not found: git"
+RUN apk update && apk add --no-cache zsh git yq --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
 
-# Set zsh as the default shell
-SHELL ["/bin/zsh", "-c"]
+# Install pnpm with the version specified in the package.json file
+RUN corepack enable && corepack prepare pnpm@$(yq e '.engines.pnpm' package.json)
