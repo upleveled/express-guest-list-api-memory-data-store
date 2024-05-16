@@ -84,9 +84,9 @@ Log in or register on [CodeSandbox - Sign in](https://codesandbox.io/signin).
 
 Change the `express-guest-list-api-memory-data-store` repo URL to include "box" (`githubbox.com` instead of `github.com`) and hit return. This will open the project on CodeSandbox.
 
-Click the "Fork" button in the top right corner of the page to create your own personal copy of the project.
+Click on "Fork" in the top right corner of the page to create your own personal copy of the project.
 
-Click the "Share" button in the top right corner of the page, set "Visibility" to "Public" and click "Move Devbox" to create a public API.
+Beside "Fork", click "Share", open the "Visibility" dropdown, select "Public" and click "Move Devbox" to allow access to your devbox from anyone.
 
 ## Related
 
