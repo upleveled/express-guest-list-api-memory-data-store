@@ -12,11 +12,9 @@ FROM node:lts-alpine
 # "/root/.oh-my-zsh/tools/check_for_upgrade.sh:31: command not found: git"
 # ```
 #
-# 3. yq used to install matching version of pnpm
-#
 # TODO: Switch to bash and remove the zsh packages in future if CodeSandbox adds
 # a feature to configure the shell
 # https://github.com/upleveled/express-guest-list-api-memory-data-store/pull/294#discussion_r1601759357
-RUN apk update && apk add --no-cache zsh git yq
+RUN apk update && apk add --no-cache zsh git
 
-RUN corepack enable && corepack prepare pnpm@$(yq eval '.engines.pnpm' package.json) --activate
+RUN corepack enable
