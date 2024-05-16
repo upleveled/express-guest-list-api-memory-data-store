@@ -86,6 +86,8 @@ Change the `express-guest-list-api-memory-data-store` repo URL to include "box" 
 
 Click the "Fork" button in the top right corner of the page to create your own personal copy of the project.
 
+Click the "Share" button in the top right corner of the page, set "Visibility" to "Public" and click "Move Devbox" to create a public API.
+
 ## Related
 
 - [Naïve Guest List API with Expo API Routes](https://gist.github.com/karlhorky/46785c6f90924738fdb44bf2e1931f17)
