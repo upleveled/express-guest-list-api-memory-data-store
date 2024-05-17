@@ -1,5 +1,4 @@
 FROM node:lts-alpine
-
 # Avoid prompts during package installation using Corepack with PNPM. This prevents the
 # build process from being stopped by prompts such as:
 # ```
