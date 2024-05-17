@@ -1,7 +1,6 @@
 FROM node:lts-alpine
 
-ARG CI=true
-
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 # 1. zsh is default shell on CodeSandbox - without it, the devbox fails to start
 # with a "OCI runtime exec failed" error:
 # ```
@@ -19,4 +18,4 @@ ARG CI=true
 # https://github.com/upleveled/express-guest-list-api-memory-data-store/pull/294#discussion_r1601759357
 RUN apk update && apk add --no-cache zsh git
 
-RUN corepack install && corepack prepare pnpm@latest --activate
+RUN corepack enable
