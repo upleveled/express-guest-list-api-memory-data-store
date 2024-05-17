@@ -86,7 +86,7 @@ This will set up a new application on your Heroku account using this repo as a t
 
 3. Click on "Fork" in the top right corner of the page to create your own personal copy of the project
 
-4. Beside "Fork", click "Share", open the "Visibility" dropdown and select "Public" and click "Move Devbox" to allow access to your devbox from anyone
+4. Beside "Fork", click "Share", select "Public" from the "Visibility" dropdown and click "Move Devbox" to allow access to your devbox from anyone
 
 ## Related
 
