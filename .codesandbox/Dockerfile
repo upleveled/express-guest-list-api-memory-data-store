@@ -1,5 +1,13 @@
 FROM node:lts-alpine
 
+# Avoid prompts during package installation using Corepack with PNPM. This prevents the
+# build process from being stopped by prompts such as:
+# ```
+# ! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-9.1.1.tgz
+# ? Do you want to continue? [Y/n]
+# ```
+# https://github.com/nodejs/corepack/blob/main/README.md#corepack-install
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 # 1. zsh is default shell on CodeSandbox - without it, the devbox fails to start
 # with a "OCI runtime exec failed" error:
 # ```
@@ -17,4 +25,4 @@ FROM node:lts-alpine
 # https://github.com/upleveled/express-guest-list-api-memory-data-store/pull/294#discussion_r1601759357
 RUN apk update && apk add --no-cache zsh git
 
-RUN corepack enable && corepack prepare pnpm@9.1.1 -activate && pnpm install
+RUN corepack enable
