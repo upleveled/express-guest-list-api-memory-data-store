@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
 # 1. zsh is default shell on CodeSandbox - without it, the devbox fails to start
-# with a "OCI runtime exec failed" error:
+# with a "/bin/zsh: no such file or directory" error:
 # ```
 # OCI runtime exec failed: exec failed: unable to start container process: exec: '/bin/zsh': stat /bin/zsh: no such file or directory: unknown
 # ```
