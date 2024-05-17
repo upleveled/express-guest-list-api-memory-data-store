@@ -1,7 +1,5 @@
 FROM node:lts-alpine
 
-ARG CI=true
-
 # 1. zsh is default shell on CodeSandbox - without it, the devbox fails to start
 # with a "OCI runtime exec failed" error:
 # ```
@@ -19,8 +17,4 @@ ARG CI=true
 # https://github.com/upleveled/express-guest-list-api-memory-data-store/pull/294#discussion_r1601759357
 RUN apk update && apk add --no-cache zsh git
 
-RUN corepack enable
-
-RUN pnpm --version
-
-RUN ECHO "Hello World"
+RUN corepack enable pnpm && corepack prepare pnpm@latest --activate
