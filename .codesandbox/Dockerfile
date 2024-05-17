@@ -1,5 +1,7 @@
 FROM node:lts-alpine
 
+ARG CI=true
+
 # 1. zsh is default shell on CodeSandbox - without it, the devbox fails to start
 # with a "OCI runtime exec failed" error:
 # ```
