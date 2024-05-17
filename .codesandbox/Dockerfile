@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+ARG COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 # 1. zsh is default shell on CodeSandbox - without it, the devbox fails to start
 # with a "OCI runtime exec failed" error:
 # ```
