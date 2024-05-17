@@ -5,11 +5,11 @@ FROM node:lts-alpine
 #
 # ```
 # OCI runtime exec failed: exec failed: unable to start container process: exec: '/bin/zsh': stat /bin/zsh: no such file or directory: unknown
-#
 # ```
 #
 # 2. Git is a dependency of zsh - without it, opening the terminal fails with a
 # "command not found" error:
+#
 # ```
 # "/root/.oh-my-zsh/tools/check_for_upgrade.sh:31: command not found: git"
 # ```
