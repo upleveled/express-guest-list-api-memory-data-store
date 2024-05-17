@@ -17,13 +17,13 @@ FROM node:lts-alpine
 # https://github.com/upleveled/express-guest-list-api-memory-data-store/pull/294#discussion_r1601759357
 RUN apk update && apk add --no-cache zsh git
 
-# Avoid prompts during package installation using Corepack with PNPM. This prevents the
+# Avoid prompts during package installation using Corepack with pnpm. This prevents the
 # build process from being stopped by prompts such as:
 # ```
 # ! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-9.1.1.tgz
 # ? Do you want to continue? [Y/n]
 # ```
-# https://github.com/nodejs/corepack/blob/main/README.md#corepack-install
+# https://github.com/nodejs/corepack/blob/main/README.md#:~:text=COREPACK_ENABLE_DOWNLOAD_PROMPT
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 
 RUN corepack enable
