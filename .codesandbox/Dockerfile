@@ -20,3 +20,7 @@ ARG CI=true
 RUN apk update && apk add --no-cache zsh git
 
 RUN corepack enable
+
+RUN pnpm --version
+
+RUN ECHO "Hello World"
