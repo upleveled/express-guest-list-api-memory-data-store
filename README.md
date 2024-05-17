@@ -81,11 +81,8 @@ This will set up a new application on your Heroku account using this repo as a t
 ### Import to CodeSandbox
 
 1. Log in or register on [CodeSandbox - Sign in](https://codesandbox.io/signin)
-
 2. Change the `express-guest-list-api-memory-data-store` repo URL to include "box" (`githubbox.com` instead of `github.com`) and hit return - this will open the project on CodeSandbox
-
 3. Click on "Fork" in the top right corner of the page to create your own personal copy of the project
-
 4. Beside "Fork", click "Share", select "Public" from the "Visibility" dropdown and click "Move Devbox" to allow access to your devbox from anyone
 
 ## Related
