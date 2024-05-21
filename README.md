@@ -83,7 +83,7 @@ This will set up a new application on your Heroku account using this repo as a t
 1. Log in or register on [CodeSandbox - Sign in](https://codesandbox.io/signin)
 2. Return to the `express-guest-list-api-memory-data-store` GitHub repository and add `box` between `github` and `.com` in the URL (`githubbox.com` instead of `github.com`) - this creates a [synced template](https://codesandbox.io/docs/learn/devboxes/synced-templates) on CodeSandbox
 3. Click on "Fork" at the top right of the page - this creates a devbox in your account from the synced template
-4. Beside "Fork", click "Share", select "Public" from the "Visibility" dropdown and click "Move Devbox" - this allows read access to your devbox from anyone
+4. Beside "Fork", click "Share", select "Public" from the "Visibility" dropdown and click "Move Devbox" - this allows everybody read access to your devbox
 
 The API can be accessed at the URL in the preview pane on the right (URL ends with `csb.app`).
 
