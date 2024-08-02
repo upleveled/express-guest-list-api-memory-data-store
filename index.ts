@@ -49,14 +49,14 @@ app.get(
   },
 );
 
-type GuestsRequestBodyGet = Guest[];
+type GuestsResponseBodyGet = Guest[];
 
 // Get all guests
 app.get(
   '/guests',
   function getGuestsHandler(
     request: Request,
-    response: Response<GuestsRequestBodyGet>,
+    response: Response<GuestsResponseBodyGet>,
   ) {
     response.json(guestList);
   },
