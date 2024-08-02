@@ -49,14 +49,14 @@ app.get(
   },
 );
 
-type ResponseBody = Guest[] | Guest | { errors: { message: string }[] };
+type GuestsRequestBodyGet = Guest[];
 
 // Get all guests
 app.get(
   '/guests',
   function getGuestsHandler(
     request: Request,
-    response: Response<ResponseBody>,
+    response: Response<GuestsRequestBodyGet>,
   ) {
     response.json(guestList);
   },
@@ -70,12 +70,18 @@ type RequestBodyPost = {
   };
 };
 
+type GuestRequestBodyPost =
+  | Guest
+  | {
+      errors: { message: string }[];
+    };
+
 // New guest
 app.post(
   '/guests',
   function postGuestsHandler(
     request: RequestBodyPost,
-    response: Response<ResponseBody>,
+    response: Response<GuestRequestBodyPost>,
   ) {
     if (!request.body.firstName || !request.body.lastName) {
       response.status(400).json({
@@ -114,10 +120,15 @@ app.post(
   },
 );
 
+type GuestResponseBodyGet = Guest | { errors: { message: string }[] };
+
 // Get a single guest
 app.get(
   '/guests/:id',
-  function getGuestHandler(request: Request, response: Response<ResponseBody>) {
+  function getGuestHandler(
+    request: Request,
+    response: Response<GuestResponseBodyGet>,
+  ) {
     const guest = guestList.find(
       (currentGuest) => currentGuest.id === request.params.id,
     );
@@ -142,12 +153,14 @@ type RequestBodyPut = {
   };
 };
 
+type GuestResponseBodyPut = Guest | { errors: { message: string }[] };
+
 // Modify a single guest
 app.put(
   '/guests/:id',
   function putGuestHandler(
     request: RequestBodyPut,
-    response: Response<ResponseBody>,
+    response: Response<GuestResponseBodyPut>,
   ) {
     const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
     const difference = Object.keys(request.body).filter(
@@ -188,12 +201,14 @@ app.put(
   },
 );
 
+type GuestResponseBodyDelete = Guest | { errors: { message: string }[] };
+
 // Delete a single guest
 app.delete(
   '/guests/:id',
   function deleteGuestHandler(
     request: Request,
-    response: Response<ResponseBody>,
+    response: Response<GuestResponseBodyDelete>,
   ) {
     const guest = guestList.find(
       (currentGuest) => currentGuest.id === request.params.id,
