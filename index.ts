@@ -15,7 +15,7 @@ type Guest = {
 
 let id = 1;
 
-const guestList: Guest[] = [];
+const guests: Guest[] = [];
 
 // Enable CORS
 app.use(function allowCrossDomainRequests(
@@ -59,7 +59,7 @@ app.get(
     request: Request,
     response: Response<GuestsResponseBodyGet>,
   ) {
-    response.json(guestList);
+    response.json(guests);
   },
 );
 
@@ -117,7 +117,7 @@ app.post(
       attending: false,
     };
 
-    guestList.push(guest);
+    guests.push(guest);
 
     response.json(guest);
   },
@@ -144,7 +144,7 @@ app.get(
     >,
     response: Response<GuestResponseBodyGet>,
   ) {
-    const guest = guestList.find(
+    const guest = guests.find(
       (currentGuest) => currentGuest.id === request.params.id,
     );
 
@@ -203,7 +203,7 @@ app.put(
       return;
     }
 
-    const guest = guestList.find(
+    const guest = guests.find(
       (currentGuest) => currentGuest.id === request.params.id,
     );
 
@@ -243,7 +243,7 @@ app.delete(
     >,
     response: Response<GuestResponseBodyDelete>,
   ) {
-    const guest = guestList.find(
+    const guest = guests.find(
       (currentGuest) => currentGuest.id === request.params.id,
     );
 
@@ -254,7 +254,7 @@ app.delete(
       return;
     }
 
-    guestList.splice(guestList.indexOf(guest), 1);
+    guests.splice(guests.indexOf(guest), 1);
     response.json(guest);
   },
 );
