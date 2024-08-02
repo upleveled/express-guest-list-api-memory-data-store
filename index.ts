@@ -123,10 +123,6 @@ app.post(
   },
 );
 
-type GuestRequestBodyGet = {
-  params: { id: string };
-};
-
 type GuestResponseBodyGet =
   | Guest
   | {
@@ -137,11 +133,7 @@ type GuestResponseBodyGet =
 app.get(
   '/guests/:id',
   function getGuestHandler(
-    request: Request<
-      ParamsDictionary,
-      GuestResponseBodyGet,
-      GuestRequestBodyGet
-    >,
+    request: Request,
     response: Response<GuestResponseBodyGet>,
   ) {
     const guest = guests.find(
@@ -159,7 +151,6 @@ app.get(
 );
 
 type GuestRequestBodyPut = {
-  params: { id: string };
   firstName: string;
   lastName: string;
   deadline?: string;
@@ -222,10 +213,6 @@ app.put(
   },
 );
 
-type GuestRequestBodyDelete = {
-  params: { id: string };
-};
-
 type GuestResponseBodyDelete =
   | Guest
   | {
@@ -236,11 +223,7 @@ type GuestResponseBodyDelete =
 app.delete(
   '/guests/:id',
   function deleteGuestHandler(
-    request: Request<
-      ParamsDictionary,
-      GuestResponseBodyDelete,
-      GuestRequestBodyDelete
-    >,
+    request: Request,
     response: Response<GuestResponseBodyDelete>,
   ) {
     const guest = guests.find(
