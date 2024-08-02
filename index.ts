@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 
 const app = express();
 
@@ -12,143 +12,197 @@ type Guest = {
   attending: boolean;
 };
 
+type RequestBodyPost = {
+  body: { firstName: string; lastName: string; deadline?: string };
+};
+
+type RequestBodyPut = {
+  params: { id: string };
+  body: {
+    firstName: string;
+    lastName: string;
+    deadline?: string;
+    attending: boolean;
+  };
+};
+
+type ResponseBody = Guest | { errors: { message: string }[] };
+
 let id = 1;
 
 const guestList: Guest[] = [];
 
 // Enable CORS
-app.use(function allowCrossDomainRequests(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header(
+app.use(function allowCrossDomainRequests(
+  request: Request,
+  response: Response,
+  next: NextFunction,
+) {
+  response.header('Access-Control-Allow-Origin', '*');
+  response.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept',
   );
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  response.header(
+    'Access-Control-Allow-Methods',
+    'GET, POST, PUT, DELETE, OPTIONS',
+  );
   next();
 });
 
 // Get endpoints
-app.get('/', function rootHandler(req, res) {
-  res.json({
-    guests: `${req.protocol}://${req.get('host')}/guests/`,
-  });
-});
+app.get(
+  '/',
+  function rootHandler(
+    request: Request,
+    response: Response<{
+      guests: string;
+    }>,
+  ) {
+    response.json({
+      guests: `${request.protocol}://${request.get('host')}/guests/`,
+    });
+  },
+);
 
 // Get all guests
-app.get('/guests', function getGuestsHandler(req, res) {
-  res.json(guestList);
-});
+app.get(
+  '/guests',
+  function getGuestsHandler(request: Request, response: Response<Guest[]>) {
+    response.json(guestList);
+  },
+);
 
 // New guest
-app.post('/guests', function postGuestsHandler(req, res) {
-  const { firstName, lastName, deadline } = req.body;
+app.post(
+  '/guests',
+  function postGuestsHandler(
+    request: RequestBodyPost,
+    response: Response<ResponseBody>,
+  ) {
+    if (!request.body.firstName || !request.body.lastName) {
+      response.status(400).json({
+        errors: [
+          {
+            message: 'Request body missing a firstName or lastName property',
+          },
+        ],
+      });
+      return;
+    }
 
-  if (!firstName || !lastName) {
-    res.status(400).json({
-      errors: [
-        { message: 'Request body missing a firstName or lastName property' },
-      ],
-    });
-    return;
-  }
+    if (Object.keys(request.body).length > 3) {
+      response.status(400).json({
+        errors: [
+          {
+            message:
+              'Request body contains more than firstName, lastName and deadline properties',
+          },
+        ],
+      });
+      return;
+    }
 
-  if (Object.keys(req.body).length > 3) {
-    res.status(400).json({
-      errors: [
-        {
-          message:
-            'Request body contains more than firstName, lastName and deadline properties',
-        },
-      ],
-    });
-    return;
-  }
+    const guest = {
+      id: String(id++),
+      firstName: request.body.firstName,
+      lastName: request.body.lastName,
+      ...(request.body.deadline ? { deadline: request.body.deadline } : {}),
+      attending: false,
+    };
 
-  const guest = {
-    id: String(id++),
-    firstName: firstName,
-    lastName: lastName,
-    ...(deadline ? { deadline: deadline } : {}),
-    attending: false,
-  };
+    guestList.push(guest);
 
-  guestList.push(guest);
-
-  res.json(guest);
-});
+    response.json(guest);
+  },
+);
 
 // Get a single guest
-app.get('/guests/:id', function getGuestHandler(req, res) {
-  const guest = guestList.find(
-    (currentGuest) => currentGuest.id === req.params.id,
-  );
+app.get(
+  '/guests/:id',
+  function getGuestHandler(request: Request, response: Response<ResponseBody>) {
+    const guest = guestList.find(
+      (currentGuest) => currentGuest.id === request.params.id,
+    );
 
-  if (!guest) {
-    res
-      .status(404)
-      .json({ errors: [{ message: `Guest ${req.params.id} not found` }] });
-    return;
-  }
-  res.json(guest);
-});
+    if (!guest) {
+      response.status(404).json({
+        errors: [{ message: `Guest ${request.params.id} not found` }],
+      });
+      return;
+    }
+    response.json(guest);
+  },
+);
 
 // Modify a single guest
-app.put('/guests/:id', function putGuestHandler(req, res) {
-  const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
-  const difference = Object.keys(req.body).filter(
-    (key) => !allowedKeys.includes(key),
-  );
+app.put(
+  '/guests/:id',
+  function putGuestHandler(
+    request: RequestBodyPut,
+    response: Response<ResponseBody>,
+  ) {
+    const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
+    const difference = Object.keys(request.body).filter(
+      (key) => !allowedKeys.includes(key),
+    );
 
-  if (difference.length > 0) {
-    res.status(400).json({
-      errors: [
-        {
-          message: `Request body contains more than allowed properties (${allowedKeys.join(
-            ', ',
-          )}). The request also contains these extra keys that are not allowed: ${difference.join(
-            ', ',
-          )}`,
-        },
-      ],
-    });
-    return;
-  }
+    if (difference.length > 0) {
+      response.status(400).json({
+        errors: [
+          {
+            message: `Request body contains more than allowed properties (${allowedKeys.join(
+              ', ',
+            )}). The request also contains these extra keys that are not allowed: ${difference.join(
+              ', ',
+            )}`,
+          },
+        ],
+      });
+      return;
+    }
 
-  const { firstName, lastName, deadline, attending } = req.body;
-  const guest = guestList.find(
-    (currentGuest) => currentGuest.id === req.params.id,
-  );
+    const guest = guestList.find(
+      (currentGuest) => currentGuest.id === request.params.id,
+    );
 
-  if (!guest) {
-    res
-      .status(404)
-      .json({ errors: [{ message: `Guest ${req.params.id} not found` }] });
-    return;
-  }
+    if (!guest) {
+      response.status(404).json({
+        errors: [{ message: `Guest ${request.params.id} not found` }],
+      });
+      return;
+    }
 
-  if (firstName) guest.firstName = firstName;
-  if (lastName) guest.lastName = lastName;
-  if (deadline) guest.deadline = deadline;
-  if ('attending' in req.body) guest.attending = attending;
-  res.json(guest);
-});
+    if (request.body.firstName) guest.firstName = request.body.firstName;
+    if (request.body.lastName) guest.lastName = request.body.lastName;
+    if (request.body.deadline) guest.deadline = request.body.deadline;
+    if ('attending' in request.body) guest.attending = request.body.attending;
+    response.json(guest);
+  },
+);
 
 // Delete a single guest
-app.delete('/guests/:id', function deleteGuestHandler(req, res) {
-  const guest = guestList.find(
-    (currentGuest) => currentGuest.id === req.params.id,
-  );
+app.delete(
+  '/guests/:id',
+  function deleteGuestHandler(
+    request: Request,
+    response: Response<ResponseBody>,
+  ) {
+    const guest = guestList.find(
+      (currentGuest) => currentGuest.id === request.params.id,
+    );
 
-  if (!guest) {
-    res
-      .status(404)
-      .json({ errors: [{ message: `Guest ${req.params.id} not found` }] });
-    return;
-  }
+    if (!guest) {
+      response.status(404).json({
+        errors: [{ message: `Guest ${request.params.id} not found` }],
+      });
+      return;
+    }
 
-  guestList.splice(guestList.indexOf(guest), 1);
-  res.json(guest);
-});
+    guestList.splice(guestList.indexOf(guest), 1);
+    response.json(guest);
+  },
+);
 
 app.listen(process.env.PORT || 4000, () => {
   console.log('🚀 Guest list server started on http://localhost:4000');
