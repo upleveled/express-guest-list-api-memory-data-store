@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
+import type { ParamsDictionary } from 'express-serve-static-core';
 
 const app = express();
 
@@ -63,11 +64,9 @@ app.get(
 );
 
 type GuestRequestBodyPost = {
-  body: {
-    firstName: string;
-    lastName: string;
-    deadline?: string;
-  };
+  firstName: string;
+  lastName: string;
+  deadline?: string;
 };
 
 type GuestResponseBodyPost =
@@ -80,7 +79,11 @@ type GuestResponseBodyPost =
 app.post(
   '/guests',
   function postGuestsHandler(
-    request: GuestRequestBodyPost,
+    request: Request<
+      ParamsDictionary,
+      GuestResponseBodyPost,
+      GuestRequestBodyPost
+    >,
     response: Response<GuestResponseBodyPost>,
   ) {
     if (!request.body.firstName || !request.body.lastName) {
@@ -134,7 +137,11 @@ type GuestResponseBodyGet =
 app.get(
   '/guests/:id',
   function getGuestHandler(
-    request: GuestRequestBodyGet,
+    request: Request<
+      ParamsDictionary,
+      GuestResponseBodyGet,
+      GuestRequestBodyGet
+    >,
     response: Response<GuestResponseBodyGet>,
   ) {
     const guest = guestList.find(
@@ -153,12 +160,10 @@ app.get(
 
 type GuestRequestBodyPut = {
   params: { id: string };
-  body: {
-    firstName: string;
-    lastName: string;
-    deadline?: string;
-    attending: boolean;
-  };
+  firstName: string;
+  lastName: string;
+  deadline?: string;
+  attending: boolean;
 };
 
 type GuestResponseBodyPut =
@@ -171,7 +176,11 @@ type GuestResponseBodyPut =
 app.put(
   '/guests/:id',
   function putGuestHandler(
-    request: GuestRequestBodyPut,
+    request: Request<
+      ParamsDictionary,
+      GuestResponseBodyPut,
+      GuestRequestBodyPut
+    >,
     response: Response<GuestResponseBodyPut>,
   ) {
     const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
@@ -227,7 +236,11 @@ type GuestResponseBodyDelete =
 app.delete(
   '/guests/:id',
   function deleteGuestHandler(
-    request: GuestRequestBodyDelete,
+    request: Request<
+      ParamsDictionary,
+      GuestResponseBodyDelete,
+      GuestRequestBodyDelete
+    >,
     response: Response<GuestResponseBodyDelete>,
   ) {
     const guest = guestList.find(
