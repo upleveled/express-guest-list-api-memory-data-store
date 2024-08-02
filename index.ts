@@ -41,7 +41,9 @@ app.get('/guests', function getGuestsHandler(req, res) {
 
 // New guest
 app.post('/guests', function postGuestsHandler(req, res) {
-  if (!req.body.firstName || !req.body.lastName) {
+  const { firstName, lastName, deadline } = req.body;
+
+  if (!firstName || !lastName) {
     res.status(400).json({
       errors: [
         { message: 'Request body missing a firstName or lastName property' },
@@ -64,9 +66,9 @@ app.post('/guests', function postGuestsHandler(req, res) {
 
   const guest = {
     id: String(id++),
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    ...(req.body.deadline ? { deadline: req.body.deadline } : {}),
+    firstName: firstName,
+    lastName: lastName,
+    ...(deadline ? { deadline: deadline } : {}),
     attending: false,
   };
 
@@ -112,6 +114,7 @@ app.put('/guests/:id', function putGuestHandler(req, res) {
     return;
   }
 
+  const { firstName, lastName, deadline, attending } = req.body;
   const guest = guestList.find(
     (currentGuest) => currentGuest.id === req.params.id,
   );
@@ -123,10 +126,10 @@ app.put('/guests/:id', function putGuestHandler(req, res) {
     return;
   }
 
-  if (req.body.firstName) guest.firstName = req.body.firstName;
-  if (req.body.lastName) guest.lastName = req.body.lastName;
-  if (req.body.deadline) guest.deadline = req.body.deadline;
-  if ('attending' in req.body) guest.attending = req.body.attending;
+  if (firstName) guest.firstName = firstName;
+  if (lastName) guest.lastName = lastName;
+  if (deadline) guest.deadline = deadline;
+  if ('attending' in req.body) guest.attending = attending;
   res.json(guest);
 });
 
