@@ -62,7 +62,7 @@ app.get(
   },
 );
 
-type RequestBodyPost = {
+type GuestRequestBodyPost = {
   body: {
     firstName: string;
     lastName: string;
@@ -70,7 +70,7 @@ type RequestBodyPost = {
   };
 };
 
-type GuestRequestBodyPost =
+type GuestResponseBodyPost =
   | Guest
   | {
       errors: { message: string }[];
@@ -80,8 +80,8 @@ type GuestRequestBodyPost =
 app.post(
   '/guests',
   function postGuestsHandler(
-    request: RequestBodyPost,
-    response: Response<GuestRequestBodyPost>,
+    request: GuestRequestBodyPost,
+    response: Response<GuestResponseBodyPost>,
   ) {
     if (!request.body.firstName || !request.body.lastName) {
       response.status(400).json({
@@ -120,13 +120,21 @@ app.post(
   },
 );
 
-type GuestResponseBodyGet = Guest | { errors: { message: string }[] };
+type GuestRequestBodyGet = {
+  params: { id: string };
+};
+
+type GuestResponseBodyGet =
+  | Guest
+  | {
+      errors: { message: string }[];
+    };
 
 // Get a single guest
 app.get(
   '/guests/:id',
   function getGuestHandler(
-    request: Request,
+    request: GuestRequestBodyGet,
     response: Response<GuestResponseBodyGet>,
   ) {
     const guest = guestList.find(
@@ -143,7 +151,7 @@ app.get(
   },
 );
 
-type RequestBodyPut = {
+type GuestRequestBodyPut = {
   params: { id: string };
   body: {
     firstName: string;
@@ -153,13 +161,17 @@ type RequestBodyPut = {
   };
 };
 
-type GuestResponseBodyPut = Guest | { errors: { message: string }[] };
+type GuestResponseBodyPut =
+  | Guest
+  | {
+      errors: { message: string }[];
+    };
 
 // Modify a single guest
 app.put(
   '/guests/:id',
   function putGuestHandler(
-    request: RequestBodyPut,
+    request: GuestRequestBodyPut,
     response: Response<GuestResponseBodyPut>,
   ) {
     const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
@@ -201,13 +213,21 @@ app.put(
   },
 );
 
-type GuestResponseBodyDelete = Guest | { errors: { message: string }[] };
+type GuestRequestBodyDelete = {
+  params: { id: string };
+};
+
+type GuestResponseBodyDelete =
+  | Guest
+  | {
+      errors: { message: string }[];
+    };
 
 // Delete a single guest
 app.delete(
   '/guests/:id',
   function deleteGuestHandler(
-    request: Request,
+    request: GuestRequestBodyDelete,
     response: Response<GuestResponseBodyDelete>,
   ) {
     const guest = guestList.find(
