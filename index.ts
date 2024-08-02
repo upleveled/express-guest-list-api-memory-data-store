@@ -40,9 +40,7 @@ app.get(
   '/',
   function rootHandler(
     request: Request,
-    response: Response<{
-      guests: string;
-    }>,
+    response: Response<{ guests: string }>,
   ) {
     response.json({
       guests: `${request.protocol}://${request.get('host')}/guests/`,
