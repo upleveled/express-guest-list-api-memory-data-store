@@ -12,22 +12,6 @@ type Guest = {
   attending: boolean;
 };
 
-type RequestBodyPost = {
-  body: { firstName: string; lastName: string; deadline?: string };
-};
-
-type RequestBodyPut = {
-  params: { id: string };
-  body: {
-    firstName: string;
-    lastName: string;
-    deadline?: string;
-    attending: boolean;
-  };
-};
-
-type ResponseBody = Guest | { errors: { message: string }[] };
-
 let id = 1;
 
 const guestList: Guest[] = [];
@@ -72,6 +56,12 @@ app.get(
     response.json(guestList);
   },
 );
+
+type RequestBodyPost = {
+  body: { firstName: string; lastName: string; deadline?: string };
+};
+
+type ResponseBody = Guest | { errors: { message: string }[] };
 
 // New guest
 app.post(
@@ -134,6 +124,16 @@ app.get(
     response.json(guest);
   },
 );
+
+type RequestBodyPut = {
+  params: { id: string };
+  body: {
+    firstName: string;
+    lastName: string;
+    deadline?: string;
+    attending: boolean;
+  };
+};
 
 // Modify a single guest
 app.put(
