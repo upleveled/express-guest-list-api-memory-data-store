@@ -49,19 +49,26 @@ app.get(
   },
 );
 
+type ResponseBody = Guest[] | Guest | { errors: { message: string }[] };
+
 // Get all guests
 app.get(
   '/guests',
-  function getGuestsHandler(request: Request, response: Response<Guest[]>) {
+  function getGuestsHandler(
+    request: Request,
+    response: Response<ResponseBody>,
+  ) {
     response.json(guestList);
   },
 );
 
 type RequestBodyPost = {
-  body: { firstName: string; lastName: string; deadline?: string };
+  body: {
+    firstName: string;
+    lastName: string;
+    deadline?: string;
+  };
 };
-
-type ResponseBody = Guest | { errors: { message: string }[] };
 
 // New guest
 app.post(
