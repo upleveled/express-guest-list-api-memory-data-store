@@ -133,7 +133,7 @@ type GuestResponseBodyGet =
 app.get(
   '/guests/:id',
   function getGuestHandler(
-    request: Request,
+    request: Request<{ id: string }>,
     response: Response<GuestResponseBodyGet>,
   ) {
     const guest = guests.find(
@@ -167,11 +167,7 @@ type GuestResponseBodyPut =
 app.put(
   '/guests/:id',
   function putGuestHandler(
-    request: Request<
-      ParamsDictionary,
-      GuestResponseBodyPut,
-      GuestRequestBodyPut
-    >,
+    request: Request<{ id: string }, GuestResponseBodyPut, GuestRequestBodyPut>,
     response: Response<GuestResponseBodyPut>,
   ) {
     const allowedKeys = ['firstName', 'lastName', 'deadline', 'attending'];
@@ -223,7 +219,7 @@ type GuestResponseBodyDelete =
 app.delete(
   '/guests/:id',
   function deleteGuestHandler(
-    request: Request,
+    request: Request<{ id: string }>,
     response: Response<GuestResponseBodyDelete>,
   ) {
     const guest = guests.find(
