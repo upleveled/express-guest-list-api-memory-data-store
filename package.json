@@ -14,7 +14,7 @@
     "@types/express": "5.0.0",
     "@types/express-serve-static-core": "5.0.6",
     "express": "5.0.1",
-    "tsx": "4.19.2"
+    "tsx": "4.19.3"
   },
   "devDependencies": {
     "@types/node": "22.13.4",
@@ -25,5 +25,5 @@
   "engines": {
     "node": ">=20.9.0"
   },
-  "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d"
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
 }
