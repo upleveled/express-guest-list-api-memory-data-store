@@ -80,7 +80,7 @@ This will set up a new application on your Heroku account using this repo as a t
 
 ## Deploy on Deno Deploy
 
-1. Fork the [Express Guest List API](https://github.com/upleveled/express-guest-list-api-memory-data-store/fork) - choose your GitHub account and click "Fork"
+1. Fork the [Express Guest List API Memory Data Store repository](https://github.com/upleveled/express-guest-list-api-memory-data-store/fork) - choose your GitHub account and click "Fork"
 2. [Create a New Project](https://dash.deno.com/new_project) on Deno Deploy - select your GitHub user and the forked repository `express-guest-list-api-memory-data-store`
 3. Scroll to the bottom, set the Entrypoint to `index.ts` and click "Deploy Project"
 
