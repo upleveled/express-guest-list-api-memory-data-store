@@ -78,14 +78,13 @@ This will set up a new application on your Heroku account using this repo as a t
 
 -->
 
-## Deploy on CodeSandbox
+## Deploy on Deno Deploy
 
-1. Log in or register on [CodeSandbox - Sign in](https://codesandbox.io/signin)
-2. Return to the `express-guest-list-api-memory-data-store` GitHub repository and add `box` between `github` and `.com` in the URL (`githubbox.com` instead of `github.com`) - this creates a [synced template](https://codesandbox.io/docs/learn/devboxes/synced-templates) on CodeSandbox
-3. Click on "Fork" at the top right of the page - this creates a devbox in your account from the synced template
-4. Beside "Fork", click "Share", select "Public" from the "Visibility" dropdown and click "Move Devbox" - this allows everybody read access to your devbox
-
-The API can be accessed at the URL in the preview pane on the right (URL ends with `csb.app`).
+1. On [the fork page for `upleveled/express-guest-list-api-memory-data-store`](https://github.com/upleveled/express-guest-list-api-memory-data-store/fork), select your GitHub account and click "Fork" to create a copy of the GitHub repository in your account
+2. Sign in to [Deno Deploy](https://dash.deno.com/signin) with your GitHub account
+3. On [Create a New Project](https://dash.deno.com/new_project), select your GitHub account in the dropdown and click on "Select" next to the forked repository `express-guest-list-api-memory-data-store`
+4. Scroll down to the "Entrypoint" field, select `index.ts` and click "Deploy Project"
+5. After successful deployment, a "Success" page will appear - click on "Go to Project" to see the project overview with the deployed URL (ends with `deno.dev`)
 
 ## Related
 

@@ -1,4 +1,8 @@
-import express, { type NextFunction, type Request, type Response } from 'express';
+import express, {
+  type NextFunction,
+  type Request,
+  type Response,
+} from 'express';
 import type { ParamsDictionary } from 'express-serve-static-core';
 
 const app = express();
@@ -77,7 +81,11 @@ type GuestResponseBodyPost =
 app.post(
   '/guests',
   function postGuestsHandler(
-    request: Request<ParamsDictionary, GuestResponseBodyPost, GuestRequestBodyPost>,
+    request: Request<
+      ParamsDictionary,
+      GuestResponseBodyPost,
+      GuestRequestBodyPost
+    >,
     response: Response<GuestResponseBodyPost>,
   ) {
     if (!request.body.firstName || !request.body.lastName) {
