@@ -86,7 +86,7 @@ This will set up a new application on your Heroku account using this repo as a t
 4. On [Create a New Project](https://dash.deno.com/new_project), select your GitHub account in the dropdown and click on "Select" next to the forked repository `express-guest-list-api-memory-data-store`
 5. Scroll down to the "Entrypoint" field, select `index.ts` and click "Deploy Project"
 6. After successful deployment, a "Success" page will appear - click "Go to Project" to open the project overview
-7. Under "Production Deployment" of the project overview, use the first URL as your deployed URL (ends with `.deno.dev`)
+7. Under "Production Deployment" of the project overview - use the first URL as your deployed URL (ends with `.deno.dev`)
 
 ## Related
 
