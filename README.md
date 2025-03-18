@@ -81,11 +81,12 @@ This will set up a new application on your Heroku account using this repo as a t
 ## Deploy on Deno Deploy
 
 1. On [the fork page for `upleveled/express-guest-list-api-memory-data-store`](https://github.com/upleveled/express-guest-list-api-memory-data-store/fork), select your GitHub account and click "Fork" to create a copy of the GitHub repository in your account
-2. Authorize Deno Deploy to access your GitHub account on [Deno Deploy - Sign in](https://dash.deno.com/signin) and accept the terms and conditions
-3. Authorize Deno Deploy to access your GitHub account, select "only select repositories" and pick `express-guest-list-api-memory-data-store` from the list
-4. On [Create a New Project](https://dash.deno.com/new_project), select your GitHub account in the dropdown and click on "Select" next to the forked repository `express-guest-list-api-memory-data-store`
-5. Scroll down to the "Entrypoint" field, select `index.ts` and click "Deploy Project"
-6. After successful deployment, a "Success" page will appear - click "Go to Project" to open the project overview
+2. On [Create a New Project](https://dash.deno.com/new_project), click on "Continue with GitHub", authorize Deno Deploy to access your GitHub account and accept the terms and conditions
+3. In the "Select User or Organization" dropdown, select "Add GitHub Account", which will open an authorization page on GitHub
+4. Select your GitHub account, select "Only select repositories" and select the repository `express-guest-list-api-memory-data-store` from the dropdown, which will return you to the new project page
+5. Select your GitHub account in the dropdown and click on "Select" next to the forked repository `express-guest-list-api-memory-data-store`
+6. In the "Entrypoint" field near the bottom of the page, select `index.ts` and click "Deploy Project"
+7. After successful deployment, a "Success" page will appear - click "Go to Project" to open the project overview
 
 The API can be accessed at the first URL under "Production Deployment" in the project overview (ends with `.deno.dev`).
 
