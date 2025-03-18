@@ -88,7 +88,7 @@ This will set up a new application on your Heroku account using this repo as a t
 6. In the "Entrypoint" dropdown near the bottom of the page, select `index.ts` and click "Deploy Project"
 7. After successful deployment, a "Success" page will appear - click "Go to Project" to open the project overview
 
-The API can be accessed at the second URL under "Production Deployment" in the project overview (ends with `.deno.dev`).
+The API can be accessed at the second URL under "Production Deployment" in the project overview (the shorter URL which ends with `.deno.dev`).
 
 ## Related
 
