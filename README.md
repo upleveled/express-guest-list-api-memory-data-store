@@ -85,7 +85,7 @@ This will set up a new application on your Heroku account using this repo as a t
 3. If your account doesn't appear in the "Select User or Organization" dropdown, select "Add GitHub Account", and then on the authorization page on GitHub, select your GitHub account, choose "Only select repositories" and select the repository `express-guest-list-api-memory-data-store` from the dropdown, which will return you to the new project page
 4. Select your GitHub account in the dropdown and click on "Select" next to the forked repository `express-guest-list-api-memory-data-store`
 5. In the "Entrypoint" dropdown near the bottom of the page, select `index.ts` and click "Deploy Project"
-6. After successful deployment, a "Success" page will appear - click "Go to Project" to open the project overview
+6. After successful deployment, a "Success" page will appear - click "Go to Project" to continue to the project overview page
 
 The API can be accessed at the second URL under "Production Deployment" in the project overview (the shorter URL which ends with `.deno.dev`).
 
