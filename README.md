@@ -78,14 +78,16 @@ This will set up a new application on your Heroku account using this repo as a t
 
 -->
 
-## Deploy on CodeSandbox
+## Deploy on Deno Deploy
 
-1. Log in or register on [CodeSandbox - Sign in](https://codesandbox.io/signin)
-2. Return to the `express-guest-list-api-memory-data-store` GitHub repository and add `box` between `github` and `.com` in the URL (`githubbox.com` instead of `github.com`) - this creates a [synced template](https://codesandbox.io/docs/learn/devboxes/synced-templates) on CodeSandbox
-3. Click on "Fork" at the top right of the page - this creates a devbox in your account from the synced template
-4. Beside "Fork", click "Share", select "Public" from the "Visibility" dropdown and click "Move Devbox" - this allows everybody read access to your devbox
+1. Click "Fork" at the top right of the `express-guest-list-api-memory-data-store` GitHub repository page, select your GitHub account and click "Fork" to create a copy of the GitHub repository in your account
+2. On [Deno Deploy - Create a New Project](https://dash.deno.com/new_project), click on "Continue with GitHub", authorize Deno Deploy to access your GitHub account and accept the terms and conditions
+3. If your account doesn't appear in the "Select User or Organization" dropdown, select "Add GitHub Account", and then on the authorization page on GitHub, select your GitHub account, choose "Only select repositories" and select the repository `express-guest-list-api-memory-data-store` from the dropdown, which will return you to the new project page
+4. Select your GitHub account in the dropdown and click on "Select" next to the forked repository `express-guest-list-api-memory-data-store`
+5. In the "Entrypoint" dropdown near the bottom of the page, select `index.ts` and click "Deploy Project"
+6. After successful deployment, a "Success" page will appear - click "Go to Project" to continue to the project overview page
 
-The API can be accessed at the URL in the preview pane on the right (URL ends with `csb.app`).
+The API URL is on the project overview page under "Production Deployment" - it's the second (shorter) URL which ends with `.deno.dev`
 
 ## Related
 
