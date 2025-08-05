@@ -7,14 +7,13 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "dev": "tsx watch index.ts",
-    "start": "tsx index.ts"
+    "dev": "node --watch index.ts",
+    "start": "node index.ts"
   },
   "dependencies": {
     "@types/express": "5.0.3",
     "@types/express-serve-static-core": "5.0.7",
-    "express": "5.1.0",
-    "tsx": "4.20.3"
+    "express": "5.1.0"
   },
   "devDependencies": {
     "@types/node": "24.1.0",
@@ -25,7 +24,7 @@
   },
   "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.18.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
