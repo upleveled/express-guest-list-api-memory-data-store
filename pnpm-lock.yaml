@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@types/express':
-        specifier: 5.0.5
-        version: 5.0.5
+        specifier: 5.0.6
+        version: 5.0.6
       '@types/express-serve-static-core':
         specifier: 5.1.0
         version: 5.1.0
       express:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
     devDependencies:
       '@types/node':
         specifier: 24.10.1
@@ -28,8 +28,8 @@ importers:
         specifier: 9.4.2
         version: 9.4.2(@babel/core@7.26.0)(@types/node@24.10.1)(@types/react-dom@18.2.25)(@types/react@18.2.77)(@typescript-eslint/utils@8.46.0(eslint@9.39.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.45.0(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1))(eslint@9.39.1)(globals@16.3.0)(typescript@5.9.3)
       prettier:
-        specifier: 3.7.1
-        version: 3.7.1
+        specifier: 3.7.4
+        version: 3.7.4
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -285,8 +285,11 @@ packages:
   '@types/express-serve-static-core@5.1.0':
     resolution: {integrity: sha512-jnHMsrd0Mwa9Cf4IdOzbz543y4XJepXrbia2T4b6+spXC2We3t1y6K44D3mR8XMFSXMCf3/l7rCgddfx7UNVBA==}
 
-  '@types/express@5.0.5':
-    resolution: {integrity: sha512-LuIQOcb6UmnF7C1PCFmEU1u2hmiHL43fgFQX67sN3H4Z+0Yk0Neo++mFsBjhOAuLzvlQeqAAkeDOZrJs9rzumQ==}
+  '@types/express@5.0.6':
+    resolution: {integrity: sha512-sKYVuV7Sv9fbPIt/442koC7+IIwK5olP1KWeD88e/idgoJqDm3JV/YUiPwkoKK92ylff2MGxSz1CSjsXelx0YA==}
+
+  '@types/http-errors@2.0.5':
+    resolution: {integrity: sha512-r8Tayk8HJnX0FztbZN7oVqGccWgw98T/0neJphO91KkmOzug1KkofZURD4UaD5uH8AqcFLfdPErnBod0u71/qg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -296,9 +299,6 @@ packages:
 
   '@types/mime@1.3.2':
     resolution: {integrity: sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==}
-
-  '@types/mime@3.0.1':
-    resolution: {integrity: sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==}
 
   '@types/node@24.10.1':
     resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
@@ -321,8 +321,8 @@ packages:
   '@types/send@0.17.1':
     resolution: {integrity: sha512-Cwo8LE/0rnvX7kIIa3QHCkcuF21c05Ayb0ZfxPiv0W8VRiZiNW/WuRupHKpqqGVGf7SUA44QSOUKaEd9lIrd/Q==}
 
-  '@types/serve-static@1.15.1':
-    resolution: {integrity: sha512-NUo5XNiAdULrJENtJXZZ3fHtfMolzZwczzBbnAeBbqBwG+LaG6YaJtuwzwGSQZ2wsCrxjEhNNjAkKigy3n8teQ==}
+  '@types/serve-static@2.2.0':
+    resolution: {integrity: sha512-8mam4H1NHLtu7nmtalF7eyBH14QyOASmcxHhSfEoRyr0nP/YdoesEtU+uSRvMe96TW/HPTtkoKqQLl53N7UXMQ==}
 
   '@typescript-eslint/eslint-plugin@8.45.0':
     resolution: {integrity: sha512-HC3y9CVuevvWCl/oyZuI47dOeDF9ztdMEfMH8/DW/Mhwa9cCLnK1oD7JoTVGW/u7kFzNZUKUoyJEqkaJh5y3Wg==}
@@ -1028,8 +1028,8 @@ packages:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
 
-  express@5.2.0:
-    resolution: {integrity: sha512-XdpJDLxfztVY59X0zPI6sibRiGcxhTPXRD3IhJmjKf2jwMvkRGV1j7loB8U+heeamoU3XvihAaGRTR4aXXUN3A==}
+  express@5.2.1:
+    resolution: {integrity: sha512-hIS4idWWai69NezIdRt2xFVofaF4j+6INOpJlVOLDO8zXGpUVEVzIYk12UUi2JzjEzWL3IOAxcTubgz9Po0yXw==}
     engines: {node: '>= 18'}
 
   fast-deep-equal@3.1.3:
@@ -1569,8 +1569,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@3.7.1:
-    resolution: {integrity: sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==}
+  prettier@3.7.4:
+    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2266,11 +2266,13 @@ snapshots:
       '@types/range-parser': 1.2.4
       '@types/send': 0.17.1
 
-  '@types/express@5.0.5':
+  '@types/express@5.0.6':
     dependencies:
       '@types/body-parser': 1.19.2
       '@types/express-serve-static-core': 5.1.0
-      '@types/serve-static': 1.15.1
+      '@types/serve-static': 2.2.0
+
+  '@types/http-errors@2.0.5': {}
 
   '@types/json-schema@7.0.15': {}
 
@@ -2278,8 +2280,6 @@ snapshots:
     optional: true
 
   '@types/mime@1.3.2': {}
-
-  '@types/mime@3.0.1': {}
 
   '@types/node@24.10.1':
     dependencies:
@@ -2305,9 +2305,9 @@ snapshots:
       '@types/mime': 1.3.2
       '@types/node': 24.10.1
 
-  '@types/serve-static@1.15.1':
+  '@types/serve-static@2.2.0':
     dependencies:
-      '@types/mime': 3.0.1
+      '@types/http-errors': 2.0.5
       '@types/node': 24.10.1
 
   '@typescript-eslint/eslint-plugin@8.45.0(@typescript-eslint/parser@8.45.0(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1)(typescript@5.9.3)':
@@ -3230,7 +3230,7 @@ snapshots:
 
   etag@1.8.1: {}
 
-  express@5.2.0:
+  express@5.2.1:
     dependencies:
       accepts: 2.0.0
       body-parser: 2.2.1
@@ -3780,7 +3780,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@3.7.1: {}
+  prettier@3.7.4: {}
 
   proxy-addr@2.0.7:
     dependencies:
