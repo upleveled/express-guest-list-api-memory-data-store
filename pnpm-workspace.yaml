@@ -1,0 +1,17 @@
+# Prevents installation of packages newer than 7 days
+# to mitigate supply chain risks
+# - https://pnpm.io/settings#minimumreleaseage
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@upleveled/*'
+  - eslint-config-upleveled
+  - stylelint-config-upleveled
+  # https://github.com/advisories/GHSA-6rw7-vpxm-498p
+  - qs@6.14.1
+ignoredBuiltDependencies:
+  - unrs-resolver
+onlyBuiltDependencies:
+  - esbuild
+# Fail on pnpm ignored build scripts
+# - https://pnpm.io/settings#strictdepbuilds
+strictDepBuilds: true
