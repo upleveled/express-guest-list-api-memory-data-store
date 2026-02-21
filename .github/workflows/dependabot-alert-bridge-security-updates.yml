@@ -42,5 +42,5 @@ jobs:
 
             Created through [dependabot-alert-bridge](https://github.com/karlhorky/dependabot-alert-bridge)
           commit-message: Update vulnerable dependencies [SECURITY]
-          author: "dependabot-alert-bridge[bot] <263013106+dependabot-alert-bridge[bot]@users.noreply.github.com>"
-          committer: "dependabot-alert-bridge[bot] <263013106+dependabot-alert-bridge[bot]@users.noreply.github.com>"
+          author: 'dependabot-alert-bridge[bot] <263013106+dependabot-alert-bridge[bot]@users.noreply.github.com>'
+          committer: 'dependabot-alert-bridge[bot] <263013106+dependabot-alert-bridge[bot]@users.noreply.github.com>'
