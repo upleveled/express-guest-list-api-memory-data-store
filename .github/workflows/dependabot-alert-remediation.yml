@@ -1,11 +1,12 @@
-name: Dependabot Alert Remediation
+name: Dependabot Alert Bridge - Security Updates
 
 on:
   repository_dispatch:
-    types: [dependabot-alert-opened]
+    types: [dependabot-alert-bridge.dependabot-alert-opened]
 
 jobs:
-  remediate:
+  dependabot_alert_bridge_apply_security_updates:
+    name: Dependabot Alert Bridge - Apply Security Updates
     runs-on: ubuntu-latest
     if: ${{ github.event.client_payload.ecosystem == 'npm' && github.event.client_payload.dependencies && github.event.client_payload.dependencies[0] }}
 
@@ -27,7 +28,19 @@ jobs:
 
       - uses: peter-evans/create-pull-request@v8
         with:
+          token: ${{ secrets.DEPENDABOT_ALERT_BRIDGE_PR_TOKEN }}
           branch: dependabot-alert-${{ github.event.client_payload.alert_number }}
-          title: 'Remediate Dependabot alert #${{ github.event.client_payload.alert_number }}'
-          body: "Updated packages: ${{ join(github.event.client_payload.dependencies, ', ') }}"
-          commit-message: Remediate Dependabot alert
+          title: "Update ${{ join(github.event.client_payload.dependencies, ', ') }} [SECURITY]"
+          body: |
+            This PR updates dependencies from a `dependabot_alert` webhook.
+
+            - Updated packages: `${{ join(github.event.client_payload.dependencies, ', ') }}`
+            - GHSA: ${{ github.event.client_payload.ghsa_id }}
+            - Advisory: https://github.com/advisories/${{ github.event.client_payload.ghsa_id }}
+            - Severity: ${{ github.event.client_payload.severity }}
+            - Ecosystem: ${{ github.event.client_payload.ecosystem }}
+
+            Created through [dependabot-alert-bridge](https://github.com/karlhorky/dependabot-alert-bridge)
+          commit-message: Update vulnerable dependencies [SECURITY]
+          author: "dependabot-alert-bridge[bot] <263013106+dependabot-alert-bridge[bot]@users.noreply.github.com>"
+          committer: "dependabot-alert-bridge[bot] <263013106+dependabot-alert-bridge[bot]@users.noreply.github.com>"
