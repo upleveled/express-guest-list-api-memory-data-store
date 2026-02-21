@@ -1,0 +1,33 @@
+name: Dependabot Alert Remediation
+
+on:
+  repository_dispatch:
+    types: [dependabot-alert-opened]
+
+jobs:
+  remediate:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.client_payload.ecosystem == 'npm' && github.event.client_payload.dependencies && github.event.client_payload.dependencies[0] }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24.13.0
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm up --depth 100 ${{ join(github.event.client_payload.dependencies, ' ') }}
+
+      - run: pnpm up -r --depth 100 ${{ join(github.event.client_payload.dependencies, ' ') }}
+
+      - uses: peter-evans/create-pull-request@v8
+        with:
+          branch: dependabot-alert-${{ github.event.client_payload.alert_number }}
+          title: 'Remediate Dependabot alert #${{ github.event.client_payload.alert_number }}'
+          body: "Updated packages: ${{ join(github.event.client_payload.dependencies, ', ') }}"
+          commit-message: Remediate Dependabot alert
