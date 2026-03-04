@@ -39,7 +39,7 @@ app.use(function allowCrossDomainRequests(
   next();
 });
 
-// Get endpoints
+// Get endpoints (GET, Read in CRUD)
 app.get(
   '/',
   function rootHandler(
@@ -54,7 +54,7 @@ app.get(
 
 type GuestsResponseBodyGet = Guest[];
 
-// Get all guests
+// Get all guests (GET, Read in CRUD)
 app.get(
   '/guests',
   function getGuestsHandler(
@@ -77,7 +77,7 @@ type GuestResponseBodyPost =
       errors: { message: string }[];
     };
 
-// New guest
+// New guest (POST, Create in CRUD)
 app.post(
   '/guests',
   function postGuestsHandler(
@@ -131,7 +131,7 @@ type GuestResponseBodyGet =
       errors: { message: string }[];
     };
 
-// Get a single guest
+// Get a single guest (GET, Read in CRUD)
 app.get(
   '/guests/:id',
   function getGuestHandler(
@@ -165,7 +165,7 @@ type GuestResponseBodyPut =
       errors: { message: string }[];
     };
 
-// Modify a single guest
+// Modify a single guest (PUT, Update)
 app.put(
   '/guests/:id',
   function putGuestHandler(
@@ -217,7 +217,7 @@ type GuestResponseBodyDelete =
       errors: { message: string }[];
     };
 
-// Delete a single guest
+// Delete a single guest (DELETE, Delete in CRUD)
 app.delete(
   '/guests/:id',
   function deleteGuestHandler(
