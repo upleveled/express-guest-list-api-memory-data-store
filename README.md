@@ -81,13 +81,13 @@ This will set up a new application on your Heroku account using this repo as a t
 ## Deploy on Deno Deploy
 
 1. Click "Fork" at the top right of the `express-guest-list-api-memory-data-store` GitHub repository page, select your GitHub account and click "Fork" to create a copy of the GitHub repository in your account
-2. On [Deno Deploy - Create a New Project](https://dash.deno.com/new_project), click on "Continue with GitHub", authorize Deno Deploy to access your GitHub account and accept the terms and conditions
-3. If your account doesn't appear in the "Select User or Organization" dropdown, select "Add GitHub Account", and then on the authorization page on GitHub, select your GitHub account, choose "Only select repositories" and select the repository `express-guest-list-api-memory-data-store` from the dropdown, which will return you to the new project page
-4. Select your GitHub account in the dropdown and click on "Select" next to the forked repository `express-guest-list-api-memory-data-store`
-5. In the "Entrypoint" dropdown near the bottom of the page, select `index.ts` and click "Deploy Project"
-6. After successful deployment, a "Success" page will appear - click "Go to Project" to continue to the project overview page
+2. On [Deno Deploy - New App](https://console.deno.com/new), click on "Sign in with GitHub", authorize Deno Deploy to access your GitHub account and accept the terms and conditions
+3. If your account doesn't appear in the "Select user or organization" dropdown, select "Add another GitHub Account", and then on the install page on GitHub, select your GitHub account, choose "Only select repositories", select the repository `express-guest-list-api-memory-data-store` from the dropdown and click the green "Install" button
+4. Select your GitHub account in the dropdown and select the forked repository `express-guest-list-api-memory-data-store`
+5. Scroll to the bottom of the page and click "Create App"
+6. After all stages of the build are marked with green checkmarks, click "Overview" on the left to continue to the project overview page
 
-The API URL is on the project overview page under "Production Deployment" - it's the second (shorter) URL which ends with `.deno.dev`
+The API URL is on the top right of the project overview page under "Production URL".
 
 ## Related
 
