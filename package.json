@@ -16,7 +16,7 @@
     "express": "5.2.1"
   },
   "devDependencies": {
-    "@types/node": "25.9.3",
+    "@types/node": "26.0.1",
     "eslint": "10.5.0",
     "eslint-config-upleveled": "10.0.0",
     "prettier": "3.8.4",
