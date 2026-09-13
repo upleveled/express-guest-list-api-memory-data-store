@@ -1,4 +1,10 @@
-# Prevents installation of packages newer than 7 days
+# Allow build scripts for trusted dependencies
+# - https://pnpm.io/settings#allowbuilds
+allowBuilds:
+  esbuild: true
+  unrs-resolver: false
+
+# Prevent installation of packages newer than 7 days
 # to mitigate supply chain risks
 # - https://pnpm.io/settings#minimumreleaseage
 minimumReleaseAge: 10080
@@ -8,7 +14,3 @@ minimumReleaseAgeExclude:
   - stylelint-config-upleveled
   # https://github.com/advisories/GHSA-6rw7-vpxm-498p
   - qs@6.14.1
-
-allowBuilds:
-  esbuild: true
-  unrs-resolver: false
