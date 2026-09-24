@@ -16,10 +16,10 @@
     "express": "5.2.1"
   },
   "devDependencies": {
-    "@types/node": "26.5.1",
+    "@types/node": "26.6.1",
     "eslint": "10.10.0",
     "eslint-config-upleveled": "10.0.4",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "typescript": "6.0.3"
   },
   "devEngines": {
