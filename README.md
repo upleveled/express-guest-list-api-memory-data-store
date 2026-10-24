@@ -93,7 +93,7 @@ This will set up a new application on your Heroku account using this repo as a t
 11. Click "Deploy web service" and wait until the status shows "Deploy succeeded | Live"
 12. Click the Render logo at the top left and click "My project" under "Projects"
 13. On the "My project" page, click the gear icon next to "My project"
-14. On the "Project settings" page, under "Project Name", replace "My project" with "UpLeveled Express Guest List API" and click "Save"
+14. On the "Project settings" page, under "Project Name", replace "My project" with "UpLeveled Express REST Guest List API" and click "Save"
 15. Click "Overview" on the left and click `express-guest-list-api-memory-data-store` to continue to the service page
 
 The API URL is the `onrender.com` URL on the service page, below the GitHub repository name.
