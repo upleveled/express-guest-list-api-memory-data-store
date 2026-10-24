@@ -78,16 +78,27 @@ This will set up a new application on your Heroku account using this repo as a t
 
 -->
 
-## Deploy on Deno Deploy
+## Deploy on Render
 
-1. Click "Fork" at the top right of the `express-guest-list-api-memory-data-store` GitHub repository page, select your GitHub account and click "Fork" to create a copy of the GitHub repository in your account
-2. On [Deno Deploy - New App](https://console.deno.com/new), click on "Sign in with GitHub", authorize Deno Deploy to access your GitHub account and accept the terms and conditions
-3. If your account doesn't appear in the "Select user or organization" dropdown, select "Add another GitHub Account", and then on the install page on GitHub, select your GitHub account, choose "Only select repositories", select the repository `express-guest-list-api-memory-data-store` from the dropdown and click the green "Install" button
-4. Select your GitHub account in the dropdown and select the forked repository `express-guest-list-api-memory-data-store`
-5. Scroll to the bottom of the page and click "Create App"
-6. After all stages of the build are marked with green checkmarks, click "Overview" on the left to continue to the project overview page
+1. Click "Fork" at the top right of the `express-guest-list-api-memory-data-store` GitHub repository page, select your GitHub account and click "Create fork" to create a copy of the GitHub repository in your account
+2. On [Render - Create an account](https://dashboard.render.com/register), click "GitHub" and click "Authorize"
+3. Confirm the prefilled email address in "Email" and click "Create Account"
+4. Open the email titled "Activate your Render account" and click "Verify your email"
+5. On the "Create a new workspace" page, click "Skip Survey" at the bottom of the page
+6. Click "New Web Service" under "Web Services"
+7. Under "Git Provider", click "GitHub". A new window will open, where you will be prompted to install the Render GitHub app. Select your GitHub account. Choose the **Only select repositories** option and select only the repository that you want to deploy. Click **Install**
+8. Back on Render, click your forked repository `express-guest-list-api-memory-data-store`
+9. Select **Frankfurt (EU Central)** as the region
+10. Under "Compute", select the "$0 / month" option marked "Free"
+11. Click "Deploy web service" and wait until the status shows "Deploy succeeded | Live"
+12. Click the Render logo at the top left and click "My project" under "Projects"
+13. On the "My project" page, click the gear icon next to "My project"
+14. On the "Project settings" page, under "Project Name", replace "My project" with "UpLeveled Express REST Guest List API" and click "Save"
+15. Click "Overview" on the left and click `express-guest-list-api-memory-data-store` to continue to the service page
 
-The API URL is on the top right of the project overview page under "Production URL".
+The API URL is the `onrender.com` URL on the service page, below the GitHub repository name.
+
+[Render Free web services](https://render.com/docs/free#free-web-services) have limitations: the server stops after 15 minutes without requests and restarts on new requests (the in-memory guest list is cleared whenever the server restarts).
 
 ## Related
 
