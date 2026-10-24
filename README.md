@@ -90,9 +90,13 @@ This will set up a new application on your Heroku account using this repo as a t
 8. Back on Render, click your forked repository `express-guest-list-api-memory-data-store`
 9. Select **Frankfurt (EU Central)** as the region
 10. Under "Compute", select the "$0 / month" option marked "Free"
-11. Click "Deploy web service", wait until the status shows "Deploy succeeded | Live" and click "View" in the popup
+11. Click "Deploy web service" and wait until the status shows "Deploy succeeded | Live"
+12. Click the Render logo at the top left and click "My project" under "Projects"
+13. On the "My project" page, click the gear icon next to "My project"
+14. On the "Project settings" page, replace "My project" under "Project Name" with "UpLeveled Express Guest List API" and click "Save"
+15. Click "Overview" on the left and click `express-guest-list-api-memory-data-store` to continue to the service page
 
-The API URL is the `https://....onrender.com` URL opened by the "View" button.
+The API URL is the `onrender.com` URL on the service page, below the GitHub repository name.
 
 [Render Free web services](https://render.com/docs/free#free-web-services) have limitations: the server stops after 15 minutes without requests and restarts on new requests (the in-memory guest list is cleared whenever the server restarts).
 
