@@ -81,7 +81,7 @@ This will set up a new application on your Heroku account using this repo as a t
 ## Deploy on Render
 
 1. Click "Fork" at the top right of the `express-guest-list-api-memory-data-store` GitHub repository page, select your GitHub account and click "Create fork" to create a copy of the GitHub repository in your account
-2. On [Render - Create an account](https://dashboard.render.com/register), click "GitHub", sign in to GitHub if necessary and click "Authorize"
+2. On [Render - Create an account](https://dashboard.render.com/register), click "GitHub" and click "Authorize"
 3. In "Email", enter the email address you want to use for Render and click "Create Account"
 4. Open the email titled "Activate your Render account" and click "Verify your email"
 5. On the "Create a new workspace" page, click "Skip Survey" below the "Next" button
