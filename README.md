@@ -84,7 +84,7 @@ This will set up a new application on your Heroku account using this repo as a t
 2. On [Render - Create an account](https://dashboard.render.com/register), click "GitHub" and click "Authorize"
 3. Confirm the prefilled email address in "Email" and click "Create Account"
 4. Open the email titled "Activate your Render account" and click "Verify your email"
-5. On the "Create a new workspace" page, click "Skip Survey" below the "Next" button
+5. On the "Create a new workspace" page, click "Skip Survey" at the bottom of the page
 6. Click "New Web Service" under "Web Services"
 7. Under "Git Provider", click "GitHub". A new window will open, where you will be prompted to install the Render GitHub app. Select your GitHub account. Choose the **Only select repositories** option and select only the repository that you want to deploy. Click **Install**
 8. Back on Render, click your forked repository `express-guest-list-api-memory-data-store`
@@ -92,9 +92,9 @@ This will set up a new application on your Heroku account using this repo as a t
 10. Under "Compute", select the "$0 / month" option marked "Free"
 11. Click "Deploy web service", wait until the status shows "Deploy succeeded | Live" and click "View" in the popup
 
-The API URL is the `https://…onrender.com` URL opened by "View".
+The API URL is the `https://....onrender.com` URL opened by the "View" button.
 
-Free services stop after 15 minutes without requests and take about one minute to restart. The in-memory guest list resets whenever the server restarts. [Render free-service limits](https://render.com/docs/free).
+[Render Free web services](https://render.com/docs/free#free-web-services) have limitations: the server stops after 15 minutes without requests and restarts on new requests (the in-memory guest list is cleared whenever the server restarts).
 
 ## Related
 
